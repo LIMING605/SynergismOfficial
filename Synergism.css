@@ -93,6 +93,7 @@ body {
     --buildings-hover-color: #666;
     --blessings-canbuy-color: #222;
     --blessings-hover-color: #444;
+    --darkgold-color: #b59410;
     --tab-color: #171717;
     --singtab-color: black;
     --buttonimg-color: black;
@@ -201,8 +202,8 @@ button {
     outline: none;
 }
 
-body button:hover,
-body button:active {
+body button:hover:not(:disabled),
+body button:active:not(:disabled) {
     background-color: var(--hover-color);
 }
 
@@ -321,7 +322,8 @@ body button:active {
     background-color: var(--hover-color);
 }
 
-#confirmationBox {
+#confirmationBox,
+#captchaHolder {
     display: none;
     position: fixed;
     top: 50vh;
@@ -477,7 +479,8 @@ body button:active {
     font-size: min(1em, 20px);
 }
 
-.offlineStats {
+.offlineStats,
+.cartList {
     display: flex;
     flex-direction: column;
     z-index: 3;
@@ -491,7 +494,8 @@ body button:active {
     margin-bottom: 2px;
 }
 
-.offlineStatElement {
+.offlineStatElement,
+.cartListElement {
     margin-left: 10px;
 }
 
@@ -507,7 +511,9 @@ body button:active {
     margin: 5px 0;
 }
 
-#exitOffline {
+#exitOffline,
+#closeCart,
+#checkout {
     width: 18em;
     min-height: auto;
     min-width: 220px;
@@ -519,7 +525,9 @@ body button:active {
     color: white;
 }
 
-#exitOffline:hover {
+#exitOffline:hover,
+#closeCart:hover,
+#checkout:not(:disabled):hover {
     background-color: var(--purplehover-color);
 }
 
@@ -1558,6 +1566,26 @@ p#transcendhotkeys {
     padding: 0;
 }
 
+#challengesTabsToggle {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    gap: 10px 15px;
+}
+
+#challengesTabsToggle > button {
+    min-width: 100px;
+    text-align: center;
+}
+
+.singularityChallenges {
+    display: flex;
+    justify-content: center;
+    column-gap: 4px;
+}
+
 #challengesWrapper {
     display: flex;
     flex-direction: column;
@@ -1567,7 +1595,15 @@ p#transcendhotkeys {
 #challengeIntroduction {
     text-align: center;
     font-size: 1.2em;
-    margin: 20px 0 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#ExaltIntroduction {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #challengesAutoToggles {
@@ -1575,6 +1611,7 @@ p#transcendhotkeys {
     justify-content: center;
     flex-flow: wrap;
     gap: 10px 15px;
+    margin-bottom: 10px;
 }
 
 #challengesAutoToggles > button {
@@ -1635,10 +1672,11 @@ p#transcendhotkeys {
 }
 
 #challengeDetails {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     justify-content: center;
-    max-width: 1200px;
     align-self: center;
+    margin-top: 10px;
 }
 
 #challengeTimers {
@@ -1804,7 +1842,6 @@ p#reincarnatehotkeys {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-flow: wrap;
     gap: 10px 15px;
     margin: 15px 0;
 }
@@ -2633,6 +2670,7 @@ p#ascendHotKeys {
     background-color: #fff4b3;
 } */
 
+.subtabSwitcher > * > button.buttonActive,
 .subtabSwitcher > button.buttonActive {
     background-color: crimson;
 }
@@ -3545,12 +3583,6 @@ header #obtainiumDisplay { color: pink; }
     border: 2px solid blue;
 }
 
-.singularityChallenges {
-    display: flex;
-    justify-content: center;
-    column-gap: 4px;
-}
-
 .rainbowBorder {
     width: 64px;
     height: 64px;
@@ -3568,6 +3600,11 @@ header #obtainiumDisplay { color: pink; }
     object-fit: none;
     background-color: var(--bg-color);
     border-radius: 3px;
+}
+
+.rainbowBorder:hover {
+    cursor: pointer;
+    background-color: var(--hover-color);
 }
 
 .rainbowBorder::before {
@@ -3666,14 +3703,54 @@ img#singularityPerksIcon {
     justify-content: center;
 }
 
-#singularityChallengeDetails {
-    width: 50%;
-    margin-left: 25%;
+#accountSubTab {
+    flex-direction: column;
 }
 
-#singularityChallengesMultiline {
+#singularityChallengeDetails {
+    display: block;
+}
+
+#singularityChallengesInfo {
     white-space: pre-line;
-    margin: 15px 0 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#singularityChallengeAllRewards {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 375px);
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+#singularityChallengeScalingHeader {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0;
+}
+
+#singularityChallengeUniqueHeader {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0;
+}
+
+#singularityChallengesScalingRewards {
+    display: block;
+    white-space: pre-line;
+    margin: 0;
+    text-align: center;
+}
+
+#singularityChallengesUniqueRewards {
+    display: block;
+    white-space: pre-line;
+    margin: 0;
 }
 
 .newPerk {
@@ -3797,15 +3874,44 @@ img#singularityPerksIcon {
 
 /* // Stolen from https://codepen.io/mike-schultz/pen/NgQvGO */
 
-#accountSubTab > div.scrollbarX {
-    padding-top: 10px;
+#accountSubTab > div.scrollbarX > div[id="button-holder"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-#accountSubTab > div.scrollbarX > img#discord-logo {
-    /* A 1.3 width x height ratio */
-    width: 96px;
-    height: 72px;
-    image-rendering: auto;
+#accountSubTab > div.scrollbarX > div[id="button-holder"] > button {
+    border: 2px solid red;
+    min-width: 150px;
+    min-height: 30px;
+    margin: 2px;
+}
+
+#accountSubTab > div.scrollbarX > div:is(#register, #login, #forgotpassword) {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gold;
+    width: max-content;
+    margin: 0 auto;
+}
+
+#accountSubTab > div.scrollbarX > div:is(#login, #forgotpassword) {
+    display: none;
+}
+
+/** Remove vertical spacing */
+#accountSubTab > div.scrollbarX > div > form {
+    font-size: 0;
+}
+
+#accountSubTab > div.scrollbarX > div > form > * {
+    font-size: medium;
+    margin: 2px 10px;
+}
+
+#accountSubTab > div.scrollbarX > div > form > input[type="submit"] {
+    border: 1px solid gold;
+    padding: 3px 5px;
 }
 
 #pixelProgressBar {
@@ -3868,7 +3974,265 @@ img#singularityPerksIcon {
     font-weight: bold;
 }
 
+#bbLoadoutContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
 form input:hover {
     background-color: var(--hover-color);
     cursor: pointer;
+}
+
+#logoutButton {
+    border: 2px solid #5865f2;
+    height: 25px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+.pseudoUpgradeContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.pseudoCoinContainer {
+    margin: 10px 10px 0 0;
+    border: 1px solid #ccc;
+    border: 2px solid orchid;
+    text-align: center;
+}
+
+#pseudoCoins > #productContainer > section > * > .pseudoCoinImage {
+    margin-top: 8px;
+}
+
+.pseudoCoinText {
+    width: 90%;
+    height: 80px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    border: 1px solid #ccc;
+    margin: 5px auto;
+}
+
+.pseudoCoinButton {
+    width: 50%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    font-size: 1.2em;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+}
+
+.pseudoCoinButton:hover {
+    background-color: white;
+    color: black;
+}
+
+#cart {
+    width: fit-content;
+    margin: 5px auto 0;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#cart > img {
+    width: 24px;
+    height: 24px;
+}
+
+#totalCost {
+    margin: 0 auto;
+}
+
+#closeCart,
+#checkout {
+    margin: 2px auto 4px;
+}
+
+.cartListElementContainer > * {
+    width: 5vh;
+}
+
+.cartListElementContainer > button {
+    min-height: unset;
+    height: 50%;
+    border: 2px solid green;
+    border-radius: 2px;
+}
+
+#itemList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.cartListElementContainer {
+    display: flex;
+}
+
+.cartListElement {
+    width: 30vh;
+}
+
+.cartListElementContainer > span:first-of-type {
+    width: 80%;
+}
+
+#upgradesContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cartContainer {
+    display: flex;
+    width: 70vh;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#upgradeGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 15%);
+    grid-template-rows: repeat(2, 15%);
+    column-gap: 10px;
+    row-gap: 64px;
+    margin: 0;
+    width: 38%;
+    padding-top: 15px;
+    max-height: 192px;
+}
+
+#upgradeGrid > div {
+    position: relative;
+    height: 64px;
+    width: 64px;
+    background: #222;
+    place-self: center;
+}
+
+#upgradeGrid > div > p {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+#upgradeGrid > div > p:nth-child(odd) {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#upgradeGrid > div > img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 70%;
+}
+
+#upgradeGrid > div[data-id].active {
+    outline: 2px solid white;
+}
+
+#pseudoCoinAmounts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#pseudoCoinAmounts > img {
+    max-height: 32px;
+    max-width: 32px;
+}
+
+#upgradeInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 50%;
+    border: 3px solid var(--darkgold-color);
+}
+
+#pseudoCoinUpgradeName {
+    background-color: var(--darkgold-color);
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+#pseudoCoinUpgradeDescription {
+    display: grid;
+    height: 192px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 192px;
+    width: 100%;
+}
+
+#pseudoCoinUpgradeIcon {
+    grid-column: 1;
+    margin: auto;
+}
+
+#pseudoCoinUpgradeTexts {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-column: 2 / 4;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#pCoinUpgradeDesc {
+    grid-row: 1 / 6;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+#pCoinUpgradeDesc > p {
+    margin: 0;
+}
+
+#pCoinButton {
+    grid-row: 6;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#buy {
+    width: 100%;
+    border: 2px solid gold;
+    font-size: 1.2em;
+}
+
+#captchaHolder > .cf-turnstile {
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: auto;
 }
