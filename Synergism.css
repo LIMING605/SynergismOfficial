@@ -136,6 +136,28 @@ body.loading {
 .amberText { color: var(--amber-text-color); }
 .lightyellowText { color: var(--lightgoldenrodyellow-text-color); }
 
+html[data-legacyicons="false"] {
+    --wowcube-color: #fd0;
+    --tesseract-color: orange;
+    --hypercube-color: #ff004c;
+    --platonic-color: orchid;
+    --hepteract-color: mediumpurple;
+}
+
+html[data-legacyicons="true"] {
+    --wowcube-color: #fff200;
+    --tesseract-color: #a349a4;
+    --hypercube-color: #ed1c24;
+    --platonic-color: lightgoldenrodyellow;
+    --hepteract-color: #ffc1d6;
+}
+
+.wowcubeText { color: var(--wowcube-color); }
+.wowtesseractText { color: var(--tesseract-color); }
+.wowhypercubeText { color: var(--hypercube-color); }
+.wowplatonicText { color: var(--platonic-color); }
+.wowhepteractText { color: var(--hepteract-color); }
+
 .active-subtab {
     background-color: crimson;
 }
@@ -211,6 +233,10 @@ button {
 body button:hover:not(:disabled):not(.disable-hover-color),
 body button:active:not(:disabled):not(.disable-hover-color) {
     background-color: var(--hover-color);
+}
+
+.none {
+    display: none !important;
 }
 
 .flex {
@@ -289,6 +315,28 @@ body button:active:not(:disabled):not(.disable-hover-color) {
     background-color: var(--alert-color);
 }
 
+#modal {
+    position: fixed;
+    display: none;
+    z-index: 6969;
+    width: 33%;
+    overflow: hidden;
+    border: 2px solid gold;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: min(1em, 24px);
+    color: white;
+    background-color: var(--alert-color);
+}
+
+#modalContent {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
 .slide-in {
     animation: slide-in 1000ms;
     animation-fill-mode: forwards;
@@ -297,6 +345,15 @@ body button:active:not(:disabled):not(.disable-hover-color) {
 .slide-out {
     animation: slide-out 1000ms;
     animation-fill-mode: forwards;
+}
+
+.iconAndNameContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
 }
 
 #notification > p {
@@ -437,6 +494,16 @@ body button:active:not(:disabled):not(.disable-hover-color) {
     align-items: center;
 }
 
+.mediumHorizontalLine {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.titleTextFont {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
 #preloadDeleteGame {
     position: fixed;
     bottom: 1em;
@@ -525,8 +592,8 @@ body button:active:not(:disabled):not(.disable-hover-color) {
 
 #exitOffline,
 #exitFastForward,
-#closeCart,
-#checkout {
+#checkout,
+#checkout-nowpayments {
     width: 18em;
     min-height: auto;
     min-width: 220px;
@@ -539,9 +606,12 @@ body button:active:not(:disabled):not(.disable-hover-color) {
 }
 
 #exitOffline:hover,
-#closeCart:hover,
 #checkout:not(:disabled):hover {
     background-color: var(--purplehover-color);
+}
+
+#checkout-buttons > #checkout-nowpayments:not(:disabled):hover {
+    background-color: var(--blessings-hover-color);
 }
 
 .resetInformationContainer {
@@ -690,8 +760,8 @@ button.isEvent:hover {
 }
 
 #cubetab {
-    border-color: orange;
-    color: red;
+    border-color: var(--wowcube-color);
+    color: var(--hypercube-color);
 }
 
 #campaigntab {
@@ -778,9 +848,9 @@ p#buildinghotkeys2 {
 
 #upgradesFlex > section > table {
     font-size: 0;
-    min-height: 182px;
     text-align: center;
     border-collapse: collapse;
+    margin: 3px;
 }
 
 #upgradesFlex > section > table td {
@@ -887,6 +957,7 @@ p#themesTitle {
 #savegame,
 #deleteGame,
 #importFileButton,
+#saveStringInput,
 #exportButtons > label {
     width: 12em;
     min-width: 180px;
@@ -1019,6 +1090,19 @@ p#promocodeinfo {
     font-size: min(1em, 20px);
 }
 
+#coinInformation {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+#coinVanity {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
 .buttonRow > div {
     display: flex;
     justify-content: flex-start;
@@ -1110,6 +1194,46 @@ p#promocodeinfo {
     justify-content: center;
 }
 
+#tieredAchievementsTable {
+    display: grid;
+    grid-template-columns: repeat(8, 48px);
+    grid-template-rows: repeat(5, 48px);
+    gap: 2px 2px;
+}
+
+#tieredAchievementsTable > div {
+    width: 48px;
+    height: 48px;
+}
+
+#ungroupedAchievementsTable {
+    display: grid;
+    grid-template-columns: repeat(12, 32px);
+    grid-template-rows: repeat(5, 32px);
+    gap: 2px 2px;
+}
+
+#ungroupedAchievementsTable > div {
+    width: 32px;
+    height: 32px;
+}
+
+#progressiveAchievementsTable {
+    display: grid;
+    grid-template-columns: repeat(8, 48px);
+    grid-template-rows: repeat(5, 48px);
+    gap: 2px 2px;
+}
+
+#progressiveAchievementsTable > div {
+    width: 48px;
+    height: 48px;
+}
+
+#achievementMultiline {
+    white-space: pre-line;
+}
+
 #achievementstable {
     font-size: 0;
     border-collapse: collapse;
@@ -1117,6 +1241,23 @@ p#promocodeinfo {
 
 #achievementstable [id^="ach"] > img {
     image-rendering: unset;
+}
+
+#achievementHeader {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#achievementHeader > p {
+    margin: 4px 0;
+    font-size: 1.2em;
+}
+
+#achievementTNLText {
+    margin: 0;
 }
 
 .NotificationToggle {
@@ -1127,7 +1268,7 @@ p#promocodeinfo {
 }
 
 .NotificationToggle > p {
-    margin: 15px 0;
+    margin: 2px 0;
 }
 
 .achNotification {
@@ -1152,22 +1293,120 @@ p#promocodeinfo {
     margin-top: 10px;
 }
 
-#buyamountoffering {
+.tieredAchievementType > img,
+.progressiveAchievementType > img,
+.synergismLevelRewardType > img {
+    width: 48px;
+    height: 48px;
+}
+
+.ungroupedAchievementType > img,
+.synergismLevelMilestoneType > img {
+    width: 32px;
+    height: 32px;
+}
+
+.tieredAchievementType img.dimmed,
+.ungroupedAchievementType img.dimmed,
+.progressiveAchievementType img.dimmed {
+    opacity: 0.3;
+}
+
+.achievement-ap-overlay {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    text-shadow: 2px 2px 4px #000;
+    z-index: 999;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.8;
+}
+
+.achievement-fraction-numerator {
+    border-bottom: 1px solid white;
+    padding-bottom: 1px;
+    min-width: 1em;
+    text-align: center;
+}
+
+.achievement-fraction-denominator {
+    padding-top: 1px;
+    min-width: 1em;
+    text-align: center;
+}
+
+.tieredAchievementType,
+.ungroupedAchievementType,
+.progressiveAchievementType {
+    position: relative;
+    display: inline-block;
+}
+
+.relative-container {
+    position: relative;
+    display: inline-block;
+}
+
+.achievement-ap-overlay.gold-text {
+    color: gold;
+}
+
+#showAchievementProgress {
+    width: 48px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid orange;
+}
+
+#achievementContainer1,
+#achievementContainer2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#synergismLevelRewardsTable {
+    display: grid;
+    grid-template-columns: repeat(12, 48px);
+    grid-template-rows: repeat(1, 48px);
+    gap: 2px 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+#synergismLevelRewardsTable > div {
+    width: 48px;
+    height: 48px;
+}
+
+#synergismLevelMilestonesTable {
+    display: grid;
+    grid-template-columns: repeat(12, 32px);
+    grid-template-rows: repeat(4, 32px);
+    gap: 2px 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+#synergismLevelMilestonesTable > div {
+    width: 32px;
+    height: 32px;
+}
+
+#buyamountoffering {
     left: calc(50% + 350px);
     top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1;
-}
-
-.talismansCenter {
-    display: flex;
-    width: 70%;
-    flex-direction: column;
-    padding: 0 10px;
-    max-width: 900px;
 }
 
 .talismansModify {
@@ -1179,27 +1418,6 @@ p#promocodeinfo {
 
 .talismansModify p {
     margin: 0;
-}
-
-#talismanSummary,
-#talismanLevelUpSummary,
-#talismanRespecSummary {
-    margin-bottom: 10px;
-}
-
-.talismanBuyAmountContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 30%;
-    margin-top: 23px;
-}
-
-#buyamounttalisman {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
 }
 
 #buyamountcoin,
@@ -1281,6 +1499,14 @@ p#prestigehotkeys {
     padding: 0;
 }
 
+#runesHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
 #runeContainer1,
 #runeContainer3,
 #runeContainer4 {
@@ -1290,12 +1516,8 @@ p#prestigehotkeys {
     position: relative;
 }
 
-#runeContainer2 {
-    margin-top: 20px;
-    justify-content: center;
-}
-
-#runesToggle {
+#runesToggle,
+#achievementsToggle {
     display: flex;
     justify-content: center;
     flex-flow: wrap;
@@ -1308,7 +1530,8 @@ p#prestigehotkeys {
     width: 20px;
 }
 
-#runesToggle > button {
+#runesToggle > button,
+#achievementsToggle > button {
     min-width: 100px;
     text-align: center;
 }
@@ -1326,24 +1549,32 @@ p#prestigehotkeys {
     margin: 0;
 }
 
-#runeDetails {
+#runeDetails,
+#runeBlessings,
+#runeSpirits {
     display: flex;
-    width: 100%;
-    max-width: calc(min(70em, 1600px));
-    min-width: 1200px;
-    flex-direction: row;
+    position: relative;
     justify-content: center;
-    height: auto;
-    margin: 10px 0;
+    flex-wrap: wrap;
+    width: 66%;
 }
 
 .runeType {
-    min-width: 14%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 180px;
     align-items: center;
-    font-size: min(1em, 20px);
+    white-space: nowrap;
+    padding: 2px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.runeType:hover {
+    box-shadow:
+        0 0 15px var(--glow-color),
+        0 0 30px var(--glow-color),
+        0 0 45px var(--glow-color);
+    background-color: var(--box-color);
 }
 
 .runeType > button {
@@ -1381,32 +1612,105 @@ img.runeTypeElement:hover {
     background-color: var(--purplehover-color);
 }
 
-#toggleautofortify,
-#toggleautoenhance {
+.runeTypeLocked {
+    opacity: 0.5;
+}
+
+.runeImageLocked {
+    filter: grayscale(50%);
+}
+
+.antSacrificeRewardLocked {
+    opacity: 0.5;
+    border-color: gray !important;
+}
+
+.antSacrificeRewardImageLocked {
+    filter: grayscale(80%);
+}
+
+#runeContainer2 {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    position: relative;
+}
+
+.talismansCenter {
+    grid-area: 1 / 2 / 4 / 8;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.talismanShardSection {
+    grid-area: 1 / 1 / 4 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.talismanToggles {
+    grid-area: 1 / 8 / 4 / 9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.talismanSettingsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+}
+
+#rarityInfoTexts {
+    display: none;
+    width: 75%;
+    align-items: center;
+}
+
+.rarityReqNum {
+    float: right;
+}
+
+#toggleautofortify {
     min-width: 125px;
     border: 2px solid red;
 }
 
 #talismanFragmentCost {
-    width: 15em;
-    max-width: 250px;
+    width: 20em;
     text-align: center;
-    margin: 0 -30px 0 0;
 }
 
-.talismanShardsContainer {
+.talismanShardContainers {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    width: 30%;
-    margin-top: 23px;
-    z-index: 1;
+    width: 60%;
+    align-items: center;
+}
+
+.talismanShardHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.talismanShardHeader > button {
+    width: 100px;
+    margin: 2px;
 }
 
 .talismanShardContainer {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    padding: 5px;
 }
 
 .talismanShardIcon {
@@ -1417,7 +1721,7 @@ img.runeTypeElement:hover {
     width: 5em;
     min-width: 70px;
     margin-left: 4px;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .fragmentBtn {
@@ -1436,19 +1740,6 @@ img.runeTypeElement:hover {
     min-width: 80px;
 }
 
-#buyTalismanAll {
-    width: 5em;
-    min-width: 80px;
-    color: orange;
-}
-
-#toggleautoBuyFragments {
-    width: 7em;
-    min-width: 94px;
-    margin-right: 10px;
-    color: orange;
-}
-
 .talisminBtnAvailable {
     background-color: var(--purplebtn-color);
     cursor: pointer;
@@ -1461,24 +1752,32 @@ img.runeTypeElement:hover {
 .talismansContainer {
     display: flex;
     position: relative;
-    justify-content: space-around;
-    padding: 0 10px;
-    max-width: 900px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .talismanContainer {
     flex-direction: column;
-    min-width: 11%;
-    min-width: 102px;
+    width: 80px;
     align-items: center;
     white-space: nowrap;
-    font-size: min(1em, 20px);
+    padding: 2px;
 }
 
 .talismanIcon {
+    height: 64px;
     width: 64px;
-    border: 4px solid white;
     cursor: pointer;
+}
+
+.talismanIcon img {
+    position: relative;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    object-fit: none;
+    background-color: var(--bg-color);
+    border-radius: 3px;
 }
 
 .talismanLevel {
@@ -1486,27 +1785,17 @@ img.runeTypeElement:hover {
     margin-bottom: 3px;
 }
 
-#respecAllTalismans {
-    position: absolute;
-    width: 7em;
-    max-width: 140px;
-    color: plum;
-    border: 2px solid white;
-    left: 135px;
-    top: 70px;
-    transform: translate(-100%);
-}
-
 #talismanEffect,
-#talismanlevelup,
-#talismanrespec {
-    margin-top: 40px;
+#talismanLevelUpCost {
+    margin-top: 10px;
     text-align: center;
 }
 
 #talismanlevelup {
-    align-self: flex-start;
-    margin-left: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #talismanlevelup table {
@@ -1516,24 +1805,6 @@ img.runeTypeElement:hover {
 #talismanlevelup table p {
     font-size: initial;
     width: 5em;
-}
-
-#talismanrespec > div {
-    display: flex;
-    flex-direction: column;
-    transform: translate(25%);
-    margin-top: 10px;
-}
-
-#talismanrespec > div > div {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.talismanRespecBtn {
-    width: 200px;
-    text-align: center;
 }
 
 #transcension {
@@ -1827,6 +2098,14 @@ p#reincarnatehotkeys {
     padding: 0;
 }
 
+.researchUnlocked {
+    display: block;
+}
+
+.researchLocked {
+    display: none;
+}
+
 .researchContainer {
     display: flex;
     justify-content: center;
@@ -2078,25 +2357,62 @@ p#reincarnatehotkeys {
     margin: 0 auto;
 }
 
-#antsWrapper {
+#antSubtabs {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    gap: 10px 15px;
+}
+
+#antSubtabs > button {
+    min-width: 100px;
+    text-align: center;
+}
+
+.antUpgrade:hover,
+.antBtn:hover {
+    box-shadow:
+        0 0 3px var(--glow-color),
+        0 0 6px var(--glow-color),
+        0 0 9px var(--glow-color);
+    background-color: var(--glow-color);
+}
+
+#antSubtab1,
+#antSubtab2,
+#antSubtab3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    margin-right: min(10em, 100px);
 }
 
-#antsWelcomeTexts { margin-top: 40px; }
-#antsWelcomeTexts > p { margin: 0; }
-#antwelcome { font-size: 1.3em; }
+.introTextContainer > p {
+    margin: 0;
+}
 
-#antrow1 {
+.introText {
+    font-size: 1.3em;
+}
+
+#antProducersContainer {
     display: flex;
-    gap: 0 4px;
+    flex-direction: column;
     margin-top: 12px;
-    color: red;
-    z-index: 1;
+}
+
+#antProducers {
+    display: flex;
+    flex-direction: row;
+}
+
+.antProducerColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #antrow2 {
@@ -2111,12 +2427,17 @@ p#reincarnatehotkeys {
     min-height: 7em;
 }
 
-#antrow4 {
+#antUpgradesContainer {
     display: flex;
-    gap: 0 4px;
-    margin-top: 10px;
-    color: red;
-    z-index: 1;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.antUpgradeRow {
+    display: flex;
+    flex-direction: row;
+    gap: 4px 4px;
+    justify-content: center;
 }
 
 #antrow2 > p,
@@ -2126,11 +2447,38 @@ p#reincarnatehotkeys {
 
 #crumbcount {
     font-size: 1.2em;
-    min-height: 2.8em;
+}
+
+.enabledAntToggle {
+    border-color: green;
+}
+
+.disabledAntToggle {
+    border-color: crimson;
+}
+
+.singlePurchaseAnt {
+    border-color: white;
+}
+
+.maxPurchaseAnt {
+    border-color: gold;
+}
+
+.buyAllAntBtn {
+    border-width: 2px;
+    border-color: gold;
+}
+
+.antToggleBtn {
+    min-width: 150px;
+    cursor: pointer;
+    border-width: 1px;
 }
 
 #antToggleFeatures {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
     margin: 5px 0;
@@ -2150,7 +2498,6 @@ p#reincarnatehotkeys {
 
 #toggleAutoSacrificeAnt {
     min-width: 150px;
-    border: 1px solid crimson;
 }
 
 #autoSacrificeAntMode,
@@ -2161,25 +2508,81 @@ p#reincarnatehotkeys {
     border: 1px solid green;
 }
 
-#sacrificeAnts {
-    position: absolute;
-    padding: 0;
-    width: 200px;
-    margin: 0 0 0 -340px;
-    text-align: center;
-    left: calc(80% - 5em);
-    white-space: nowrap;
-    z-index: 1;
+#additionalAutoSacOptions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.sacrificeStatus {
+.antSacToggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: flex-start;
+    height: 32px;
+}
+
+.antSacToggle p {
+    margin: 0;
+}
+
+#sacrificeUnlockTexts > p {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+#sacrificeAnts {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.sacrificeAntsContainer {
+    width: 33.33%;
+}
+
+#altar {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+#altar p {
+    margin: 0;
+}
+
+#autoSacrifice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 #antSacrificeTimer {
     padding: 2px 0.5em;
+    font-size: 1.2em;
+    color: gold;
+}
+
+.canAntSacrifice {
+    box-shadow:
+        0 0 15px crimson,
+        0 0 30px crimson,
+        0 0 45px crimson;
+    background-color: crimson;
+    border-radius: 50%;
+}
+
+.canAntSacrifice:hover {
+    box-shadow:
+        0 0 20px lightgoldenrodyellow,
+        0 0 40px gold,
+        0 0 60px goldenrod;
+    background-color: white !important;
+    border-radius: 50%;
 }
 
 .antSacrificeSettingsContainer {
@@ -2187,18 +2590,60 @@ p#reincarnatehotkeys {
     flex-direction: column;
 }
 
-#antSacrificeSummary {
-    position: absolute;
-    padding: 0;
-    width: 300px;
-    top: 30px;
-    left: calc(80% - 5em);
-    text-align: left;
-    white-space: nowrap;
+.antSacrificeRewardColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    min-width: 100px;
 }
 
-#antSacrificeSummary p {
+.antSacrificeRewardColumn > p {
     margin: 0;
+}
+
+#immortalELOInfo,
+#immortalELOOverview {
+    flex-direction: column;
+}
+
+#immortalELOInfo > p,
+#immortalELOOverview > p {
+    margin: 0;
+}
+
+#lotusCorner {
+    border: 2px solid pink;
+    width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#lotusCorner p {
+    margin: 0;
+}
+
+#lotusButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#use-lotus {
+    border: 2px solid pink;
+    width: 50%;
+    height: 30px;
+}
+
+#antSacrificeObtainiumOfferings,
+#antSacrificeShardsRow1,
+#antSacrificeShardsRow2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .antSacrificeHeader {
@@ -2207,22 +2652,91 @@ p#reincarnatehotkeys {
     white-space: initial;
 }
 
-#antSacrificeTable {
-    margin: 15px 0 0 70px;
-    border-spacing: 0;
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
+#antSacrificeCompendium {
+    width: 50%;
 }
 
-#antSacrificeTable p {
-    margin-left: 5px;
+/* Ant Leaderboard Styles */
+#antLeaderboardContainer {
+    margin-top: 10px;
+}
+
+.antLeaderboardToggleBtn {
+    padding: 8px 16px;
+    color: white;
+    border: 2px solid #666;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    width: 33%;
+}
+
+.antLeaderboardToggleBtn:hover {
+    background-color: #5a5a5a;
+    border-color: #888;
+}
+
+.antLeaderboardToggleBtn[data-mode="daily"] {
+    border-color: #3a9;
+}
+
+.antLeaderboardToggleBtn[data-mode="allTime"] {
+    border-color: #f90;
+}
+
+.antLeaderboardToggleBtn[data-mode="overview"] {
+    border-color: #0df;
+}
+
+.antLeaderboardToggleBtn[data-mode="info"] {
+    border-color: #8a2be2;
+}
+
+#antLeaderboardTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#antLeaderboardTable th,
+#antLeaderboardTable td {
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #555;
+}
+
+#antLeaderboardTable th {
+    background-color: #3a3a3a;
+    font-weight: bold;
+    color: #fff;
+}
+
+#antLeaderboardTable tr {
+    background-color: #2a2a2a;
+    transition: background-color 0.2s;
+}
+
+.antLeaderboardCurrentSacrifice {
+    background-color: #2a4a2a !important;
+    border: 2px solid #4a8a4a !important;
 }
 
 .antBtn {
     height: 100%;
 }
 
-.antTierBtnAvailable,
+.antTierBtnAvailable {
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+.antMasteryBtnAvailable {
+    cursor: pointer;
+    background-color: lightgreen;
+}
+
 .antUpgradeBtnAvailable {
     cursor: pointer;
     background-color: silver;
@@ -2284,7 +2798,7 @@ p#reincarnatehotkeys {
 .cubeBtn {
     min-width: 100px;
     background-color: var(--blackbtn-color);
-    border: 1px solid gold;
+    border: 1px solid var(--wowcube-color);
 }
 
 .autoOpensBtn {
@@ -2315,10 +2829,23 @@ p[id$="BlessingsTotal"] {
     margin-right: auto;
 }
 
-#cubeBlessingsTotal { color: orange; }
-#tesseractBlessingsTotal { color: var(--orchid-text-color); }
-#hypercubeBlessingsTotal { color: rgb(255 0 76); }
-#platonicBlessingsTotal { color: orange; }
+#platonicFooter,
+#cubeFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#platonicFooter p,
+#cubeFooter p {
+    margin: 0;
+}
+
+#platonicAsterisk {
+    font-size: 0.75em;
+}
 
 #cubesWrapper {
     display: flex;
@@ -2494,6 +3021,7 @@ button.language-select span.lang-name {
 
 #creditssubtab {
     margin-top: 20px;
+    flex-direction: column;
 }
 
 #creditssubtab > * {
@@ -2560,7 +3088,7 @@ button.language-select span.lang-name {
 
 #tesseractAmount {
     color: white;
-    border: 1px solid orange;
+    border: 1px solid var(--tesseract-color);
     background-color: var(--blackbtn-color);
 }
 
@@ -2829,14 +3357,6 @@ p#ascendHotKeys {
     min-height: 50px;
 }
 
-.runeBlessingRow {
-    display: flex;
-    width: 1200px;
-    align-items: center;
-    gap: 4px 15px;
-    margin-bottom: 10px;
-}
-
 .runeIcons {
     height: 64px;
     width: 64px;
@@ -2938,7 +3458,9 @@ p#ascendHotKeys {
 }
 
 /* Credit: gwabo_ */
-.campaignIcon:not(.green-background) {
+.campaignIcon:not(.green-background),
+.tieredAchievementType img:not(.green-background),
+.progressiveAchievementType img:not(.green-background) {
     --pct: 0;
 
     background-image:
@@ -3396,27 +3918,6 @@ header #obtainiumDisplay { color: pink; }
     color: limegreen;
 }
 
-#ascCubes {
-    color: yellow;
-}
-
-#ascTess {
-    /* color: var(--orchid-text-color); */
-    color: orange;
-}
-
-#ascHyper {
-    color: var(--crimson-text-color);
-}
-
-#ascPlatonic {
-    color: orchid;
-}
-
-#ascHepteract {
-    color: mediumpurple;
-}
-
 #ascTimeAccel {
     color: royalblue;
 }
@@ -3720,6 +4221,143 @@ header #obtainiumDisplay { color: pink; }
     align-items: center;
 }
 
+/* Singularity Elevator Styles */
+.singularityElevatorContainer {
+    border: 2px solid gold;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.lookaheadInfo {
+    margin: 20px;
+}
+
+.lookaheadInfo > p {
+    margin: 0;
+}
+
+.elevatorControls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.elevatorTargetSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.elevatorTargetSection label {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.elevatorInput:focus {
+    outline: none;
+    border-color: orange;
+}
+
+.elevatorButton {
+    --glow-color: gold;
+
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+    border: 2px solid gold;
+    border-radius: 6px;
+    padding: 12px 24px;
+    color: var(--text-color);
+    min-width: 140px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.elevatorInput {
+    background-color: var(--input-color);
+    border: 2px solid gold;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: var(--text-color);
+    font-size: 1.1em;
+    width: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    appearance: textfield;
+}
+
+.elevatorInput::-webkit-outer-spin-button,
+.elevatorInput::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.elevatorButton:hover {
+    background-color: white !important;
+    border: 2px solid lightgoldenrodyellow;
+    color: black;
+    box-shadow:
+        0 0 15px var(--glow-color),
+        0 0 30px var(--glow-color),
+        0 0 45px var(--glow-color);
+}
+
+.elevatorLockSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.elevatorLockSection p {
+    margin: 0;
+}
+
+#elevatorSettings {
+    border: 2px solid white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.elevatorToggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: flex-start;
+    width: 75%;
+    height: 32px;
+}
+
+#elevatorLockToggle,
+#elevatorSlowClimbToggle {
+    transform: scale(2);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.elevatorToggleLabel {
+    color: var(--text-color);
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+}
+
+.elevatorLockStatus {
+    margin: 5px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
 #actualSingularityUpgradeContainer,
 #octeractUpgradeContainer,
 #blueberryUpgradeContainer {
@@ -3743,6 +4381,11 @@ header #obtainiumDisplay { color: pink; }
     padding: 2px;
     width: 100%;
     gap: 4px;
+}
+
+.blueberryUpgradeTier > div {
+    width: 32px;
+    height: 32px;
 }
 
 .singularityUpgrade,
@@ -3815,6 +4458,72 @@ header #obtainiumDisplay { color: pink; }
 
 @keyframes rotaterainbow {
     to { transform: rotate(360deg); }
+}
+
+.rainbowText {
+    color: transparent;
+    background-image: linear-gradient(90deg, #ca001f, #ffb17f, #fff200, #22b14c, #767dda, #a349a4, #ca001f, #ffb17f);
+    background-clip: text;
+    background-size: 700%;
+    animation: rainbow-animation 5s linear infinite;
+}
+
+@keyframes rainbow-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.gradientText {
+    color: transparent;
+    background-image: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--gradient-start));
+    background-clip: text;
+    background-size: 700%;
+    animation: gradient-animation 5s linear infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.transcendedBallerGradient {
+    --gradient-start: orchid;
+    --gradient-end: #a741a7;
+}
+
+.reincarnatedBallerGradient {
+    --gradient-start: green;
+    --gradient-end: greenyellow;
+}
+
+.ascendedBallerGradient {
+    --gradient-start: orange;
+    --gradient-end: yellow;
+}
+
+.singularityGradient {
+    --gradient-start: gold;
+    --gradient-end: lightgoldenrodyellow;
+}
+
+.bellGradient {
+    --gradient-start: gold;
+    --gradient-end: darkgoldenrod;
+}
+
+.lotusGradient {
+    --gradient-start: purple;
+    --gradient-end: pink;
 }
 
 .singularityUpgrade > img,
@@ -3895,7 +4604,7 @@ img#singularityPerksIcon {
     width: 100%;
 }
 
-#testingMultiline,
+#goldenQuarkMultiline,
 #singularityOcteractsMultiline,
 #singularityAmbrosiaMultiline {
     white-space: pre-line;
@@ -4097,14 +4806,15 @@ img#singularityPerksIcon {
     border: 2px solid gold;
 }
 
-.notInLoadout {
-    visibility: hidden;
-}
-
 /* Style for dimmed image */
 .blueberryUpgrade img.dimmed,
 .redAmbrosiaUpgrade img.dimmed {
-    opacity: 0.5; /* Adjust the opacity to control the dimming effect */
+    opacity: 0.3;
+}
+
+.blueberryUpgrade img.superDimmed,
+.redAmbrosiaUpgrade img.superDimmed {
+    opacity: 0; /* if not bought, fully dim */
 }
 
 /* Style for level display */
@@ -4114,9 +4824,14 @@ img#singularityPerksIcon {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1em; /* Adjust font size as needed */
-    text-shadow: 2px 2px 4px #000; /* Add a text shadow for better readability */
-    z-index: 999; /* Ensure the text is on top of the image */
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px #000;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.8;
+    background-color: black;
 }
 
 /* Style for relative positioning */
@@ -4181,20 +4896,20 @@ img#singularityPerksIcon {
 
 /* // Stolen from https://codepen.io/mike-schultz/pen/NgQvGO */
 
-#accountSubTab > div.scrollbarX > div[id="button-holder"] {
+#accountSubTab div#left.scrollbarX > div[id="button-holder"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-#accountSubTab > div.scrollbarX > div[id="button-holder"] > button {
+#accountSubTab div#left.scrollbarX > div[id="button-holder"] > button {
     border: 2px solid red;
     min-width: 150px;
     min-height: 30px;
     margin: 2px;
 }
 
-#accountSubTab > div.scrollbarX > div:is(#register, #login, #forgotpassword) {
+#accountSubTab div#left.scrollbarX > div:is(#register, #login, #forgotpassword) {
     display: flex;
     flex-direction: column;
     border: 1px solid gold;
@@ -4202,23 +4917,204 @@ img#singularityPerksIcon {
     margin: 0 auto;
 }
 
-#accountSubTab > div.scrollbarX > div:is(#login, #forgotpassword) {
+#accountSubTab div#left.scrollbarX > div:is(#login, #forgotpassword) {
     display: none;
 }
 
 /** Remove vertical spacing */
-#accountSubTab > div.scrollbarX > div > form {
+#accountSubTab div#left.scrollbarX > div > form {
     font-size: 0;
 }
 
-#accountSubTab > div.scrollbarX > div > form > * {
+#accountSubTab div#left.scrollbarX > div > form > * {
     font-size: medium;
     margin: 2px 10px;
 }
 
-#accountSubTab > div.scrollbarX > div > form > input[type="submit"] {
+#accountSubTab div#left.scrollbarX > div > form > input[type="submit"] {
     border: 1px solid gold;
     padding: 3px 5px;
+}
+
+.splitContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.splitContainer > .scrollbarX {
+    width: 50%;
+}
+
+#accountSubTab div#right.scrollbarX > #buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#accountSubTab div#right.scrollbarX #upload,
+#accountSubTab div#right.scrollbarX #transfer {
+    min-width: 100px;
+    min-height: 30px;
+    border: 2px solid purple;
+    margin: 2px;
+}
+
+#accountSubTab div#right.scrollbarX #transfer {
+    border: 2px solid pink;
+}
+
+.spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    transform: translateY(-1px); /* Fine-tune this value */
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-1px) rotate(0deg); }
+    100% { transform: translateY(-1px) rotate(360deg); }
+}
+
+#accountSubTab div#right.scrollbarX > #table {
+    white-space: nowrap;
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table {
+    display: grid;
+    grid-template-columns: 80px 0.5fr 0.5fr;
+    width: 99%;
+    justify-content: center;
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table > * {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table > .grid-header {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    padding-top: 0;
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table .grid-cell {
+    text-align: left;
+    padding: 5px;
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table .grid-cell.alt-row {
+    background: var(--history-lines);
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table .name-cell {
+    font-weight: 500;
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table .date-cell {
+    font-size: 14px;
+}
+
+#accountSubTab div#right.scrollbarX > #table > .grid-table .grid-details-row {
+    background: var(--alert-color);
+    border-left: 3px solid #007bff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Details content container */
+.details-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Details actions section */
+.details-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.details-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.details-actions .btn-download {
+    background: var(--success-color, #28a745);
+    color: white;
+}
+
+.details-actions .btn-download:hover {
+    background: var(--success-hover, #218838);
+}
+
+.details-actions .btn-load {
+    background: var(--primary-color, #007bff);
+    color: white;
+}
+
+.details-actions .btn-load:hover {
+    background: var(--primary-hover, #0056b3);
+}
+
+.details-actions .btn-delete {
+    background: var(--danger-color, #dc3545);
+    color: white;
+}
+
+.details-actions .btn-delete:hover {
+    background: var(--danger-hover, #c82333);
+}
+
+/* Add hover effect to main rows to indicate they're clickable */
+#accountSubTab div#right.scrollbarX > #table > .grid-table .grid-row:hover .grid-cell {
+    background: var(--hover-color, rgb(0 123 255 / 10%));
+}
+
+/* Smooth animation for expanding rows */
+.grid-details-row {
+    animation: slide-down 0.2s ease-out;
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .details-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .details-actions {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
 }
 
 #pixelProgressBar {
@@ -4302,6 +5198,56 @@ form input:hover {
     margin-top: 5px;
 }
 
+/* Event Bonuses Dropdown Styles */
+.event-bonuses-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.event-bonuses-header:hover {
+    opacity: 0.8;
+}
+
+.event-bonuses-header .chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+    line-height: 1;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.event-bonuses-content {
+    display: block;
+    margin-left: 24px;
+}
+
+.personal-bonus-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bonus-line-name {
+    flex: 1;
+    text-align: left;
+}
+
+.bonus-line-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .pseudoUpgradeContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -4317,23 +5263,75 @@ form input:hover {
     align-items: center;
 }
 
-.pseudoSubscriptionContainer > form {
+#manage-subscription-holder {
+    display: flex;
+    flex: row;
+}
+
+#manage-subscription-holder > form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10px;
+    margin: 5px;
 }
 
-.pseudoSubscriptionContainer > form > input[type="submit"] {
+#manage-subscription-holder > form > input[type="submit"] {
     border: 2px solid gold;
+    background-color: var(--box-color);
     width: 200px;
     height: 40px;
 }
 
+#manage-subscription-holder > form > input[type="submit"]:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+.subscriptionManager:focus-within > div { display: flex; }
+
+.subscriptionManager > button {
+    border: 2px solid gold;
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+}
+
+.subscriptionManager > div {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    border: 2px solid white;
+    margin-top: 50px;
+    background-color: var(--box-color);
+}
+
+.subscriptionManager > div > button {
+    width: 200px;
+    height: 40px;
+    margin: 2px;
+}
+
 .pseudoSubscriptionContainer > #sub-section-holder {
+    font-family: Inconsolata, monospace;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 70%;
+    width: 75%;
+}
+
+.subscriptionWebsite {
+    border: 1px solid gold;
+    background-color: darkgoldenrod;
+    color: var(--text-color);
+    margin: 2px;
+    cursor: pointer;
+}
+
+.subscriptionCancel {
+    border: 1px solid red;
+    background-color: maroon;
+    color: var(--text-color);
+    margin: 2px;
+    cursor: pointer;
 }
 
 .pseudoCoinContainer {
@@ -4344,14 +5342,59 @@ form input:hover {
 }
 
 .subscriptionContainer {
-    margin: 10px 10px 0 0;
+    margin: 0;
     border: 1px solid lightgoldenrodyellow;
     border: 2px solid gold;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.subscriptionContainer > div:first-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.subscriptionContainer > div:first-child > ul {
+    flex: 1;
+    margin-bottom: auto;
+}
+
+.subscriptionContainer > .pseudoCoinButton,
+.subscriptionContainer > div:not(:first-child) {
+    margin-top: auto;
+}
+
+.subscriptionContainer > div.checkout-paypal {
+    width: 76%;
+    margin: 0 auto;
+}
+
+.subscriptionContainer > .pseudoCoinButton {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+
+.subscriptionContainer > div > .pseudoCoinSubImage {
+    margin: 12px auto 4px;
 }
 
 #pseudoCoins > #productContainer > section > * > .pseudoCoinImage {
     margin-top: 8px;
+}
+
+#pseudoCoins > #supportContainer {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#pseudoCoins > #supportContainer > a {
+    border: 1px solid gold;
+    padding: 4px 8px;
 }
 
 #pseudoCoins img {
@@ -4359,13 +5402,13 @@ form input:hover {
 }
 
 .pseudoCoinSubImage {
+    margin-top: 7px;
     height: 48px;
     width: 48px;
 }
 
 .pseudoCoinText {
     width: 90%;
-    height: 80px;
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
@@ -4380,7 +5423,7 @@ form input:hover {
     box-sizing: border-box;
     text-align: center;
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
-    margin: 5px auto;
+    margin: 5px auto 0;
 }
 
 .pseudoCoinButton {
@@ -4394,6 +5437,7 @@ form input:hover {
     font-size: 1.2em;
     word-wrap: break-word;
     margin-bottom: 5px;
+    font-family: Inconsolata, monospace;
 }
 
 .pseudoCoinButton:hover {
@@ -4417,9 +5461,19 @@ form input:hover {
     margin: 0 auto;
 }
 
-#closeCart,
-#checkout {
+#checkout-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#checkout-buttons > button[id^="checkout"] {
     margin: 2px auto 4px;
+}
+
+#checkout-buttons > #checkout-nowpayments {
+    background-color: cadetblue;
 }
 
 .cartListElementContainer > * {
@@ -4480,10 +5534,10 @@ form input:hover {
     border: 2px solid var(--amber-text-color);
     padding: 5px;
     box-sizing: border-box;
+    width: 50%;
 }
 
 .consumablePurchaseBtn {
-    display: flex;
     align-items: center;
     white-space: pre;
     padding: 0 5px;
@@ -4497,7 +5551,7 @@ form input:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .timeSkipContainer {
@@ -4505,8 +5559,7 @@ form input:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    width: 33%;
+    width: 33.333%;
     height: 30%;
 }
 
@@ -4519,13 +5572,27 @@ form input:hover {
     padding: 0;
 }
 
+#topRowConsumables {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.lotusHeaderText {
+    text-align: center;
+}
+
+.lotusHeaderText p {
+    margin: 0;
+}
+
+.lotusContainer {
+    border: 2px solid pink !important;
+}
+
 /* Cost text */
 #consumablesGrid > div > button > :nth-child(2) {
     color: var(--amber-text-color);
-}
-
-#consumablesGrid > div > * {
-    margin: 0;
 }
 
 #upgradeGrid {
@@ -4580,7 +5647,6 @@ form input:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px;
 }
 
 #pseudoCoinAmounts > img,
@@ -4918,6 +5984,14 @@ html[data-chal9x1="false"] .chal9x1 {
     display: none;
 }
 
+html[data-sacrifice-unlock="true"] .sacrificeUnlock {
+    display: inline-block;
+}
+
+html[data-sacrifice-unlock="false"] .sacrificeUnlock {
+    display: none;
+}
+
 html[data-chal10="true"] .chal10 {
     display: block;
 }
@@ -4974,6 +6048,54 @@ html[data-prestige-unlock="false"] .prestigeunlockib {
     display: none;
 }
 
+html[data-prestige-unlock="true"] .prestigeunlock {
+    display: block;
+}
+
+html[data-prestige-unlock="true"] .offlineStats > .prestigeunlock {
+    display: flex;
+}
+
+html[data-prestige-unlock="true"] .transcendunlock {
+    display: block;
+}
+
+html[data-prestige-unlock="true"] .offlineStats > .transcendunlock {
+    display: flex;
+}
+
+html[data-prestige-unlock="true"] .reincarnationunlock {
+    display: block;
+}
+
+html[data-prestige-unlock="true"] .offlineStats > .reincarnationunlock {
+    display: flex;
+}
+
+html[data-prestige-unlock="false"] .prestigeunlock {
+    display: none;
+}
+
+html[data-prestige-unlock="false"] .offlineStats > .prestigeunlock {
+    display: none;
+}
+
+html[data-prestige-unlock="false"] .transcendunlock {
+    display: none;
+}
+
+html[data-prestige-unlock="false"] .offlineStats > .transcendunlock {
+    display: none;
+}
+
+html[data-prestige-unlock="false"] .reincarnationunlock {
+    display: none;
+}
+
+html[data-prestige-unlock="false"] .offlineStats > .reincarnationunlock {
+    display: none;
+}
+
 html[data-research150="true"] .research150 {
     display: block;
 }
@@ -4999,7 +6121,7 @@ html[data-cube-upgrade19="false"] .cubeUpgrade19 {
 }
 
 html[data-sacrifice-ants="true"] .sacrificeAnts {
-    display: block;
+    display: flex;
 }
 
 html[data-sacrifice-ants="false"] .sacrificeAnts {
@@ -5070,6 +6192,15 @@ html[data-golden-quark3-upg="false"] .goldenQuark3Upg {
     display: none;
 }
 
+.modalBtnBuy {
+    width: 60px;
+    height: 30px;
+    background-color: var(--button-color);
+    border: 2px solid gold;
+    margin: 5px auto;
+    text-align: center;
+}
+
 #patchnotes {
     cursor: pointer;
 }
@@ -5098,4 +6229,1137 @@ html[data-golden-quark3-upg="false"] .goldenQuark3Upg {
     background-color: rgb(0 0 0 / 30%);
     pointer-events: all;
     display: none;
+}
+
+@keyframes rainbow-border {
+    0% { border-color: #f00; }
+    16.67% { border-color: #ff7f00; }
+    33.33% { border-color: #ff0; }
+    50% { border-color: #0f0; }
+    66.67% { border-color: #00f; }
+    83.33% { border-color: #8b00ff; }
+    100% { border-color: #f00; }
+}
+
+.rainbow-border-highlight {
+    border: 3px solid #f00;
+    border-radius: 5px;
+    padding: 5px;
+    animation: rainbow-border 2s linear infinite;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+.hamburger-line {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: white;
+    margin: 2px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 1px;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 1024px) {
+    html {
+        min-width: unset;
+        width: 100%;
+    }
+
+    body {
+        overflow-x: auto;
+    }
+
+    /* Ascension stats - horizontally scrollable on mobile */
+    #ascensionStats {
+        min-width: unset;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scrollbar-width: thin;
+    }
+
+    #ascensionStats > span {
+        flex-shrink: 0;
+    }
+
+    /* Navigation tabs - make scrollable */
+    #tabrow {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    nav button {
+        min-width: 80px;
+        flex-shrink: 0;
+        font-size: 0.85em;
+    }
+
+    .subHeader {
+        flex-direction: column;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    /* Sub tab wrappers */
+    .subTabWrapper {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        width: 95%;
+        gap: 8px 10px;
+    }
+
+    .subTabWrapper > button {
+        min-width: unset;
+        width: 100%;
+        font-size: 0.85em;
+    }
+
+    /* Building rows */
+    .buttonRow {
+        margin-left: 2%;
+        margin-right: 2%;
+        font-size: 0.9em;
+        margin-top: unset;
+    }
+
+    .buttonRow > div {
+        gap: 5px;
+    }
+
+    .buttonRow > div > .desc {
+        width: 100%;
+        order: -1;
+    }
+
+    .buttonRow > div > .stats {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    /* Auto-buy quantity */
+    #buyamountcoin,
+    #buyamountcrystal,
+    #buyamountmythos,
+    #buyamountparticle,
+    #buyAmountTesseract {
+        position: unset;
+        left: unset;
+    }
+
+    /* Building text */
+    #buildingtext {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    /* Coin buildings */
+    #coinBuildings {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    #coinInformation {
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    /* Upgrades flex container */
+    #upgradesFlex {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        margin: 2% auto;
+        width: unset;
+    }
+
+    #upgradesFlex button:has(img) {
+        min-height: unset;
+    }
+
+    #upgradesFlex > section {
+        margin-top: 10px;
+    }
+
+    .shop-section.mobile-flex {
+        display: flex;
+    }
+
+    /* Prestige/Transcension containers */
+    #prestige,
+    #transcension {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    #crystalupgrades {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    p#prestigehotkeys,
+    p#buildinghotkeys {
+        width: 95%;
+        font-size: 0.85em;
+    }
+
+    /* Rune containers */
+    #runeDetails,
+    #runeBlessings,
+    #runeSpirits {
+        width: 90%;
+    }
+
+    .runeType {
+        width: 140px;
+    }
+
+    #runeContainer2 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .talismansCenter {
+        order: 1;
+    }
+
+    .talismanShardSection {
+        order: 2;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .talismanToggles {
+        order: 3;
+        align-items: center;
+    }
+
+    #challengeTimers {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #oneChallengeDetails {
+        width: 95%;
+    }
+
+    #startChallenge {
+        min-width: 200px;
+        width: 80%;
+    }
+
+    /* Research section - convert table to wrapping grid */
+    .researchContainer {
+        overflow-x: visible;
+    }
+
+    .researchContainer > .scrollbarX {
+        overflow-x: visible;
+    }
+
+    #researchtable,
+    #researchtable > tbody,
+    #researchtable > tbody > tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #researchtable > tbody > tr > td {
+        display: block;
+    }
+
+    #researchtable button > img {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Ants */
+    #sacrificeAnts > *:nth-child(odd) {
+        background-color: #ffffff08;
+    }
+
+    #antSacrificeRewards > div {
+        flex-wrap: wrap;
+    }
+
+    .antSacToggle {
+        height: unset;
+    }
+
+    .antUpgradeRow {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+    }
+
+    #antSacrificeCompendium {
+        width: unset;
+    }
+
+    /* WowCubes */
+    #cubesWrapper {
+        width: unset;
+        flex-direction: column;
+    }
+
+    #wowCubeSidebar {
+        width: unset;
+        flex-direction: row;
+    }
+
+    .cubeTab {
+        width: 100vw;
+        margin-left: unset;
+    }
+
+    .cubeBonus {
+        white-space: unset;
+        margin-top: 25px; /* fix overlapping with custom open input */
+    }
+
+    p[id$="BlessingsTotal"] {
+        margin-left: unset;
+        margin-right: unset;
+    }
+
+    #cubeTab6 {
+        flex-direction: row;
+        align-items: unset;
+    }
+
+    .challengePortion {
+        width: unset;
+    }
+
+    .platonicUpgradesContainer {
+        margin-left: unset;
+    }
+
+    .platonicContainer {
+        width: unset;
+    }
+
+    .hepteractGrid {
+        grid-template-columns: repeat(3, 1fr);
+        align-self: center;
+        width: unset;
+    }
+
+    .openGrid {
+        align-self: unset;
+    }
+
+    #heptGrid button:not(#hepteractAutoPercentageButton) {
+        min-height: 100%;
+    }
+
+    #cubeUpgradeTable button {
+        min-height: unset;
+    }
+
+    /* Campaigns */
+    #campaignsIcons {
+        width: unset;
+    }
+
+    #campaignIconGrid {
+        grid-template-columns: repeat(5, 48px);
+        grid-column-gap: unset;
+        grid-row-gap: unset;
+    }
+
+    #campaignsTokensInfo {
+        width: unset;
+    }
+
+    #traits {
+        flex-direction: column;
+    }
+
+    #corruptionStatsLoadouts {
+        min-width: 100%;
+        margin: unset;
+    }
+
+    .corrDesc {
+        min-width: unset;
+    }
+
+    .corruptionStatRow > button {
+        min-width: 44px;
+    }
+
+    #corruptionMain {
+        min-width: unset;
+    }
+
+    #elevatorLockToggle,
+    #elevatorSlowClimbToggle {
+        transform: unset;
+    }
+
+    #actualSingularityUpgradeContainer,
+    #octeractUpgradeContainer,
+    #blueberryUpgradeContainer {
+        width: unset;
+    }
+
+    #singularityInfo {
+        grid-template-columns: unset;
+    }
+
+    #singularityPerksGrid {
+        grid-template-columns: repeat(2, 50%);
+        grid-gap: unset;
+    }
+
+    #singularityPerksDesc {
+        height: unset;
+        min-width: unset;
+    }
+
+    #ambrosiaTexts {
+        line-height: unset;
+    }
+
+    #bbLoadoutContainer {
+        flex-wrap: wrap;
+    }
+
+    .blueberryUpgradeTier {
+        gap: unset;
+    }
+
+    .blueberryUpgradeTier button {
+        min-height: unset !important;
+    }
+
+    /* Achievement grids */
+    #tieredAchievementsTable {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #ungroupedAchievementsTable {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #progressiveAchievementsTable {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #synergismLevelRewardsTable {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #synergismLevelRewardsTable > div {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    /* Settings */
+    .settingSubTabUpper {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #confirmationToggleBox,
+    #exportButtons,
+    #thirdParty {
+        max-width: 95%;
+    }
+
+    /* Modals and dialogs */
+    #confirmationBox,
+    #captchaHolder {
+        width: 90vw;
+        min-width: unset;
+        max-width: 95vw;
+    }
+
+    #modal {
+        width: 90%;
+        max-width: 95vw;
+    }
+
+    #notification {
+        width: 80%;
+        min-width: unset;
+    }
+
+    #offlineContainer,
+    #fastForwardContainer {
+        width: 90vw;
+        max-width: 95vw;
+        font-size: 0.9em;
+    }
+
+    #changelogWrapper {
+        width: 90%;
+    }
+
+    .resetsContainer {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .resetInformationContainer {
+        width: unset;
+    }
+
+    .resetsButtons {
+        margin: 0 auto;
+    }
+
+    #resetinfo {
+        text-align: center;
+        height: unset;
+    }
+
+    /* Cube upgrades */
+    .pseudoUpgradeContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Hepteract bars */
+    #pixelProgressBar,
+    #ambrosiaProgressBar {
+        width: 80%;
+    }
+
+    /* Toggle buttons */
+    #runesToggle,
+    #achievementsToggle,
+    #challengesTabsToggle,
+    #challengesAutoToggles {
+        gap: 8px 10px;
+    }
+
+    #runesToggle > button,
+    #achievementsToggle > button,
+    #challengesTabsToggle > button {
+        min-width: 80px;
+        font-size: 0.85em;
+    }
+
+    /* Reset Subtabs */
+    #historyResetTable,
+    #historyAntsTable {
+        min-width: unset;
+    }
+
+    #historyReset,
+    #historyAnts {
+        margin-left: unset;
+    }
+
+    .subtabContent.subtabActive.historySubTab.subtabDisplayFlex > div {
+        flex-direction: column;
+    }
+
+    html[data-sacrifice-ants="true"] .sacrificeAnts {
+        flex-direction: column;
+    }
+
+    #achievements {
+        flex-wrap: wrap;
+    }
+
+    /* Display values on a new line */
+    .statNumber {
+        float: none;
+        display: block;
+    }
+
+    #statisticsSubTab > * {
+        word-break: break-word;
+    }
+
+    .statContainer {
+        min-width: unset;
+        max-width: 50%;
+        width: unset;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .statPortion {
+        min-width: unset;
+    }
+
+    /* PseudoCoins / Subscriptions */
+    .subscriptionContainer > div.checkout-paypal {
+        width: unset;
+    }
+
+    #pseudoCoins > #supportContainer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pseudoSubscriptionContainer > #sub-section-holder {
+        width: unset;
+    }
+
+    #upgradeGrid {
+        grid-template-rows: repeat(3, 33%);
+        row-gap: 5px;
+        width: unset;
+        max-height: unset;
+        padding-bottom: 15px;
+    }
+
+    .timeSkipSet {
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    .timeSkipContainer {
+        height: auto;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        overflow: hidden; /* TODO */
+    }
+
+    .lotusOptions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    *[data-lotus="true"] *:not(span) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .consumablePurchaseBtn {
+        white-space: unset;
+        width: 80%;
+    }
+
+    #topRowConsumables > .purchaseConsumableContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #event {
+        padding: unset;
+        padding-top: 20px;
+    }
+
+    #themeArea > div {
+        position: unset;
+    }
+
+    #themeArea.open > div {
+        display: inline-grid;
+    }
+
+    #ascendConstantUpgrades {
+        width: unset;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Extra small screens */
+    html {
+        font-size: 14px;
+    }
+
+    /* Prevent mobile browsers from zooming in on input focus
+       https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
+    input:not(#manage-patreon-sub-button),
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    /* Mobile menu toggle button - use high specificity to override nav button */
+    nav.navbar > button.mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+        border: 1px solid #555;
+        border-radius: 4px;
+        padding: 4px 8px;
+        cursor: pointer;
+        margin: 3px auto;
+        min-height: unset;
+        min-width: unset;
+        width: auto;
+        font-size: 1em;
+    }
+
+    nav.navbar > button.mobile-menu-toggle:hover,
+    nav.navbar > button.mobile-menu-toggle:focus {
+        background: linear-gradient(135deg, #444 0%, #2a2a2a 100%);
+        border-color: #777;
+    }
+
+    nav.navbar > button.mobile-menu-toggle:active {
+        transform: scale(0.95);
+    }
+
+    /* Hamburger animation when menu is open */
+    .mobile-menu-toggle.menu-open .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(3px, 3px);
+    }
+
+    .mobile-menu-toggle.menu-open .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.menu-open .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(3px, -3px);
+    }
+
+    /* Tab row - collapsed by default on mobile */
+    nav.navbar #tabrow {
+        display: none !important;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        background: #000c;
+        border-radius: 8px;
+        margin: 5px 10px;
+        overflow-y: auto;
+        flex-wrap: nowrap;
+    }
+
+    /* Show tab row when menu is open */
+    nav.navbar.menu-open #tabrow {
+        display: flex !important;
+    }
+
+    /* Tab buttons in mobile menu */
+    nav.navbar #tabrow > button {
+        width: 100%;
+        min-width: unset;
+        padding: 12px 15px;
+        font-size: 1em;
+        text-align: center;
+        border-radius: 6px;
+    }
+
+    nav button {
+        min-width: 70px;
+        font-size: 0.75em;
+        padding: 2px;
+    }
+
+    .subTabWrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .buttonRow {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 0.85em;
+    }
+
+    .buttonRow > div > .image {
+        height: 24px;
+        width: 24px;
+    }
+
+    .buildingPurchaseBtn {
+        width: 100%;
+        font-size: 0.85em;
+    }
+
+    .buttonRow > div > .auto {
+        width: 5em;
+        min-width: 60px;
+    }
+
+    /* Upgrades */
+    #upgradesFlex {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    /* Runes */
+    .runeType {
+        width: 100px;
+    }
+
+    #runeDetails,
+    #runeBlessings,
+    #runeSpirits {
+        width: 100%;
+    }
+
+    #buyRuneBlessingToggle,
+    #buyRuneSpiritToggleValue {
+        text-align: center;
+    }
+
+    /* Achievements */
+    #tieredAchievementsTable {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .tieredAchievementType > img,
+    .progressiveAchievementType > img,
+    .synergismLevelRewardType > img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #ungroupedAchievementsTable {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #progressiveAchievementsTable {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #synergismLevelRewardsTable {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #synergismLevelRewardsTable > div {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    #synergismLevelMilestonesTable {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #synergismLevelMilestonesTable > div {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    /* Challenge icons */
+    #challengeIcons img {
+        width: 48px;
+        height: 48px;
+    }
+
+    #oneChallengeDetails {
+        font-size: 0.9em;
+    }
+
+    #startChallenge {
+        min-width: 150px;
+        min-height: 60px;
+        font-size: 1em;
+    }
+
+    .singularityChallenges {
+        flex-wrap: wrap;
+    }
+
+    #singularityChallengeAllRewards {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    #researchToggles {
+        flex-wrap: wrap;
+    }
+
+    /* Cubes */
+    #cubeTab6 {
+        flex-direction: column;
+    }
+
+    /* Campaigns */
+    #campaignsMain {
+        display: unset;
+    }
+
+    #campaignsDescriptions {
+        width: unset;
+    }
+
+    /* Dialogs */
+    #confirmationBox,
+    #captchaHolder {
+        min-height: unset;
+        padding: 10px;
+    }
+
+    #confirm,
+    #alert,
+    #prompt {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    #confirm {
+        grid-template-areas:
+            "txt"
+            "btn"
+            "btn2";
+        gap: 10px;
+    }
+
+    #alert {
+        grid-template-areas:
+            "txt"
+            "btn";
+        gap: 10px;
+    }
+
+    #prompt {
+        grid-template-areas:
+            "txt"
+            "lbl"
+            "btn"
+            "btn2";
+        gap: 10px;
+    }
+
+    #prompt_text {
+        margin: 0;
+    }
+
+    /* Settings */
+    #savegame,
+    #deleteGame,
+    #importFileButton,
+    #saveStringInput,
+    #exportButtons > label {
+        width: 100%;
+        min-width: unset;
+    }
+
+    #exportgame {
+        width: 100%;
+        min-width: unset;
+    }
+
+    /* Reset row */
+    #resetrow {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #resetrow img {
+        height: 24px;
+        width: 24px;
+    }
+
+    #upgradeGrid {
+        width: 100%;
+        grid-template-columns: repeat(5, 15%);
+        grid-template-rows: unset;
+        justify-content: center;
+        column-gap: 4px;
+        row-gap: 4px;
+        max-height: none;
+        height: auto;
+        padding: 0;
+    }
+
+    #upgradeGrid > div {
+        place-self: unset;
+        margin: unset !important;
+    }
+
+    #upgradeInfo {
+        width: unset;
+    }
+
+    /* PseudoCoins / Subscriptions */
+    #productContainer {
+        width: unset;
+    }
+
+    #consumablesSection {
+        width: 95%;
+    }
+
+    #topRowConsumables {
+        flex-wrap: wrap;
+    }
+
+    .purchaseConsumableContainer {
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    #manage-subscription-holder {
+        flex-direction: column;
+    }
+
+    .pseudoSubscriptionContainer > #sub-section-holder {
+        grid-template-columns: repeat(2, 50%);
+        width: unset;
+    }
+
+    #cartContainer {
+        width: unset;
+    }
+
+    /* Settings subtabs */
+
+    #languagesubtab {
+        flex-direction: column;
+    }
+
+    .languageContribution {
+        min-width: unset;
+    }
+
+    .languagesMenu {
+        min-width: unset;
+    }
+
+    #creditList {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    #artistList {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .splitContainer {
+        flex-direction: column;
+    }
+
+    .splitContainer > div {
+        width: unset !important;
+    }
+
+    .grid-row > .name-cell {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .hotkeys {
+        grid-template-columns: repeat(2, 50%);
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    /* Shops tab */
+    #actualWrapper {
+        flex-direction: column;
+    }
+
+    #actualConsumables {
+        width: unset;
+    }
+
+    #actualShop {
+        width: unset;
+        justify-content: center;
+    }
+
+    #actualShop > div {
+        width: 30%;
+    }
+
+    #shopHovers {
+        width: unset;
+    }
+
+    #sacrificeAnts {
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    .sacrificeAntsContainer {
+        width: unset;
+    }
+
+    #antSacrificeShardsRow1,
+    #antSacrificeShardsRow2 {
+        flex-wrap: wrap;
+    }
+
+    /* Stats for nerds */
+    #statsForNerds {
+        min-width: unset;
+        max-width: 50%;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #summaryGeneration {
+        width: unset !important;
+    }
+
+    #statsForNerds > button {
+        width: 100%;
+    }
+
+    #wowCubeSidebar {
+        flex-direction: column;
+    }
+
+    .hepteractGrid {
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+/* Ensure touch-friendly tap targets */
+@media (pointer: coarse) {
+    button:not(.mobile-menu-toggle),
+    .buildingPurchaseBtn,
+    nav button:not(.mobile-menu-toggle),
+    .subTabWrapper > button {
+        min-height: 44px;
+    }
+
+    .antProducerColumn > button {
+        min-height: unset;
+    }
+
+    #platonicUpgradePics button {
+        min-height: unset;
+    }
+
+    input[type="checkbox"] {
+        min-width: 24px;
+        min-height: 24px;
+    }
+
+    .confirmationToggle {
+        gap: 10px;
+    }
+
+    #runesToggle > button,
+    #achievementsToggle > button,
+    #challengesTabsToggle > button,
+    #challengesAutoToggles > button {
+        min-height: 44px;
+        padding: 8px 12px;
+    }
 }
