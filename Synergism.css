@@ -907,6 +907,7 @@ p#buildinghotkeys2 {
 .settingSubTabUpper {
     display: flex;
     justify-content: center;
+    width: 75%;
 }
 
 #confirmationToggleBox,
@@ -915,9 +916,7 @@ p#buildinghotkeys2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    min-width: 300px;
-    max-width: 500px;
+    width: 33%;
     padding: 5px;
 }
 
@@ -4731,15 +4730,14 @@ img#singularityPerksIcon {
     color: #ffd700;
 }
 
-.event-bonus,
+#event-bonus,
+#event-timer,
 .event-timer {
     margin: 5px 0;
 }
 
 #globalEventBonus,
-#consumableEventBonus,
-#globalEventTimer,
-#consumableEventTimer {
+#globalEventTimer {
     color: #8f8;
 }
 
@@ -5535,6 +5533,7 @@ form input:hover {
     padding: 5px;
     box-sizing: border-box;
     width: 50%;
+    display: flex;
 }
 
 .consumablePurchaseBtn {
@@ -6056,19 +6055,19 @@ html[data-prestige-unlock="true"] .offlineStats > .prestigeunlock {
     display: flex;
 }
 
-html[data-prestige-unlock="true"] .transcendunlock {
+html[data-transcend-unlock="true"] .transcendunlock {
     display: block;
 }
 
-html[data-prestige-unlock="true"] .offlineStats > .transcendunlock {
+html[data-transcend-unlock="true"] .offlineStats > .transcendunlock {
     display: flex;
 }
 
-html[data-prestige-unlock="true"] .reincarnationunlock {
+html[data-reincarnate-unlock="true"] .reincarnationunlock {
     display: block;
 }
 
-html[data-prestige-unlock="true"] .offlineStats > .reincarnationunlock {
+html[data-reincarnate-unlock="true"] .offlineStats > .reincarnationunlock {
     display: flex;
 }
 
@@ -6080,20 +6079,28 @@ html[data-prestige-unlock="false"] .offlineStats > .prestigeunlock {
     display: none;
 }
 
-html[data-prestige-unlock="false"] .transcendunlock {
+html[data-transcend-unlock="false"] .transcendunlock {
     display: none;
 }
 
-html[data-prestige-unlock="false"] .offlineStats > .transcendunlock {
+html[data-transcend-unlock="false"] .offlineStats > .transcendunlock {
     display: none;
 }
 
-html[data-prestige-unlock="false"] .reincarnationunlock {
+html[data-reincarnate-unlock="false"] .reincarnationunlock {
     display: none;
 }
 
-html[data-prestige-unlock="false"] .offlineStats > .reincarnationunlock {
+html[data-reincarnate-unlock="false"] .offlineStats > .reincarnationunlock {
     display: none;
+}
+
+html[data-particle-upgrade-research="true"] .particleUpgradeResearch {
+    display: block;
+}
+
+html[data-particle-upgrade-research="false"] .particleUpgradeResearch {
+    display: none !important;
 }
 
 html[data-research150="true"] .research150 {
@@ -6192,6 +6199,32 @@ html[data-golden-quark3-upg="false"] .goldenQuark3Upg {
     display: none;
 }
 
+html[data-instant-unlock1="true"] .shopTalismanShopUpgrade {
+    opacity: 0.5;
+}
+
+html[data-instant-unlock1="true"] .shopTalismanShopUpgrade button {
+    display: none;
+}
+
+html[data-instant-unlock1="false"] .shopTalismanShopUpgrade {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+html[data-instant-unlock2="true"] .infiniteAscentShopUpgrade {
+    opacity: 0.5;
+}
+
+html[data-instant-unlock2="true"] .infiniteAscentShopUpgrade button {
+    display: none;
+}
+
+html[data-instant-unlock2="false"] .infiniteAscentShopUpgrade {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .modalBtnBuy {
     width: 60px;
     height: 30px;
@@ -6205,7 +6238,7 @@ html[data-golden-quark3-upg="false"] .goldenQuark3Upg {
     cursor: pointer;
 }
 
-#changelogWrapper {
+#iframeOverlayWrapper {
     width: 50%;
     height: 100%;
     z-index: 10000;
@@ -6218,7 +6251,7 @@ html[data-golden-quark3-upg="false"] .goldenQuark3Upg {
     display: none;
 }
 
-#changelogBlur {
+#iframeOverlayBlur {
     position: fixed;
     top: 0;
     left: 0;
@@ -6712,7 +6745,7 @@ html[data-golden-quark3-upg="false"] .goldenQuark3Upg {
         font-size: 0.9em;
     }
 
-    #changelogWrapper {
+    #iframeOverlayWrapper {
         width: 90%;
     }
 
