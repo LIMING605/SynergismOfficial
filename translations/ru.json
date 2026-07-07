@@ -193,9 +193,9 @@
         "effect": "Коэффициент Рун 1-5: +{{amount}}; Руна БВ: +{{amount2}}"
       },
       "ambrosiaBrickOfLead": {
-        "name": "The Brick of Lead",
-        "description": "I always keep this under my hat. This reduces your Ambrosia Bar Point generation speed by 2% per level, but grants Ambrosia Luck to compensate! It also slows down the Singularity timer by 1% per level.",
-        "effect": "Ambrosia Bar Point Requirement x{{blueberryGen}}, Ambrosia Luck +{{luckMult}}, Singularity timer speed x{{singularitySpeed}}"
+        "name": "Кирпич Лидерства",
+        "description": "I always keep this under my hat. This reduces your Ambrosia Bar Point generation speed by 2% per level, but grants Ambrosia Luck to compensate! It also slows down Global, Ascension and Singularity speed by 1% per level. <<lightgoldenrodyellow| <i>This might be good for a certain EXALT...</i> >>",
+        "effect": "Ambrosia Bar Point Requirement x{{blueberryGen}}, Ambrosia Luck +{{luckMult}}. Global, Ascension, Singularity Speed x{{singularitySpeed}}"
       },
       "ambrosiaFreeLuckUpgrades": {
         "name": "The Green, Green Grass of Ambrosia",
@@ -203,7 +203,7 @@
         "effect": "+{{amount}} free levels for 'Luck' type Quark Upgrades"
       },
       "ambrosiaFreeGenerationUpgrades": {
-        "name": "Time in a Bottle",
+        "name": "Время в бутылке",
         "description": "For all 'Generation' type Quark Upgrades, gain +1 free level per level! These will have a corresponding icon.",
         "effect": "+{{amount}} free levels for 'Generation' type Quark Upgrades"
       },
@@ -379,7 +379,7 @@
         "effect": "+<<orange|{{amount}}>> free Offering levels"
       },
       "freeObtainiumUpgrades": {
-        "name": "Weird Science",
+        "name": "Странная наука",
         "description": "Gain +1 free Obtainium level for Quark Upgrades per level!",
         "effect": "+<<pink|{{amount}}>> free Obtainium levels"
       },
@@ -422,7 +422,7 @@
       "22": "Национальное достояние: Учредите 1 Монетный Двор.",
       "23": "Добавим конкуренции!: Учредите 10 Монетных Дворов.",
       "24": "Стильная Подделка!: Учредите 100 Монетных Дворов.",
-      "25": "Why do we need all these?: Establish 333 Coin Mints.",
+      "25": "Куда нам столько?: Учредите 333 Монетных Дворов.",
       "26": "Нет, правда, куда??: Учредите 5000 Монетных Дворов.",
       "27": "Никто не остановит нас???: Учредите 10,000 Монетных Дворов.",
       "28": "Ну что ж, время чеканить: Учредите 20,000 Монетных Дворов.",
@@ -3064,7 +3064,7 @@
       "58": "[Cx8] Немного празднично! Если идет событие, прирост всех кубов умножается на 1,25.",
       "59": "[Cx9] Довольно кисло для печенья. Но оно увеличивает вашу скорость возвышения на +0.25% за уровень, стоит-ли жаловаться?",
       "60": "[Cx10] У пекарни Wow! осталось немного имбиря с рождественской распродажи. Уменьшает стоимость покупки золотых кварков на 0,003% за уровень.",
-      "61": "[Cx11] Съедобный, но бестолковый. Добавляет целых 125 миллисекунд к погрешности кода 'время', и увеличивает его награду на +2% за уровень.",
+      "61": "[Cx11] Edible but prone to mistakes. Adds 25 whole milliseconds to the tolerance of code 'time', and increases its reward by +2% per level. When maxxed, code 'time' always gives its reward, even if you fail it!",
       "62": "[Cx12] Платоник любит тоффи. В испытании 15 ваше получение обтаиниума и подношений умножено в 8 раз.",
       "63": "[Cx13] Брауни, лучшее из обоих миров. Увеличивает получение 3Д-кубов на 1%, основывая на имеющихся гептерактах (+3% за OOM).",
       "64": "[Cx14] Некоторые говорят, что сам Муравьиный Бог сочинил эти предсказания. Когда вы получаете статую из платоновых кубов, вы получаете две.",
@@ -3073,7 +3073,7 @@
       "67": "[Cx17] Что, чёрт возьми, в них??? В любом случае лимит уровня талисмана Метафизики увеличен на 1,337.",
       "68": "[Cx18] Какого чёрта! Это даже не печенье. +0.01% кварков за каждый уровень этого улучшения. +5% больше на 1,000 уровне!",
       "69": "[Cx19] Печенье, о котором вы больше никогда не вспомните. +12% золотых кварков в этой сингулярности.",
-      "70": "[Cx20] Вершина кулинарного искусства. Ничто не будет так же вкусно, как это. Получайте +0.01% больше октерактов за уровень при возвышении, если средний уровень ваших порч минимум 14.",
+      "70": "[Cx20] The pinnacle of baking. Nothing you'll eat will taste better than this. For each total Corruption level, including free ones, gain 1.016x the Octeracts per second!",
       "71": "[Cx21] За каждую редкость ваших талисманов, получение обтаиниума умножается на 1.04.",
       "72": "[Cx22] За каждую редкость ваших талисманов, получение подношений умножается на 1.04.",
       "73": "[Cx23] Каждый уровень добавляет 1 бонусный уровень руны Бесконечного восхождения!",
@@ -3234,15 +3234,15 @@
       "123": "[5x23] +40 Ant ELO per level.",
       "124": "[5x24] Unlock enhanced toggles for The Great Automator! Be able to control when you Sacrifice based on your Reborn ELO.",
       "125": "[5x25] Удачи, дружище. [+1 Экспорт Кварк/час за уровень]",
-      "126": "[6x1] 6 rows? That can't be... (+1% Accelerators / level)",
-      "127": "[6x2] Another +1% Accelerator Boosts / level!",
+      "126": "[6x1] 6 строк? Этого не может быть... (+1% Ускорителей / уровень)",
+      "127": "[6x2] И ещё +1% к Усил. Ускорителям / уровень!",
       "128": "[6x3] The trifecta! +1% Multipliers / level.",
       "129": "[6x4] Crystal Upgrade 3 has a higher cap (+0.001 per Level * log4(Common Fragments + 1)).<br>Crystal Upgrade 4 also gets a higher cap (+0.05 per Level * log4(Common Fragments + 1)).",
       "130": "[6x5] Unlock automation for leveling Talismans! Activates every 2 real life seconds.",
       "131": "[6x6] Turn some Ant Disciples against Ant God, giving +0.5% Rune Power per level. False prophets, or false profits?",
       "132": "[6x7] Recruit a couple other Ants towards your side as well, giving +2 free Ant upgrade levels per level.",
       "133": "[6x8] Using some coalesced Obtainium, you can make Ant Sacrifice +3% more bountiful per level.",
-      "134": "[6x9 lol] The funny number. Gain a +6.9% bonus to Blessing Power.",
+      "134": "[6x9 гыыы))] Смешное число. Даёт +6.9% бонус к Благословению.",
       "135": "[6x10] Makes it so that the Talisman autobuyer automatically buys to Rarity increase!",
       "136": "[6x11] It may be time to look back. Increase your Global Speed by +1.5% per level.",
       "137": "[6x12] Заплатите Корпорации Wow!, и они проспонсируют вам +1% Кубов за уровень в ваш банк Вознесения.",
@@ -3264,7 +3264,7 @@
       "153": "[7x3] Hey, I totally didn't steal this idea. You gain 12 Tributes of Wow! Cube tier for every Tesseract opened.",
       "154": "[7x4] Make all Tesseract buildings produce 3% faster per level. Hey, isn't that more than the last Research tier?",
       "155": "[7x5] Том 2 из 4: Как покорить вселенную Муравьёв. При покупке, базовые требования Испытания 10 снова делятся на e100M.",
-      "156": "[7x6] What, again? Alright. +0.6% Accelerators per level.",
+      "156": "[7x6] Что, опять? Ну ладно. +0.6% Ускорителей за уровень.",
       "157": "[7x7] Gas, gas, gas. +0.6% Accelerator Boosts per level.",
       "158": "[7x8] Dupe DUPE DUPE. +0.6% Multipliers per level.",
       "159": "[7x9] Somehow, I can't explain why, you reduce your Taxes by 2% multiplicative, based on 3/5 * log10(Rare Fragments)!",
@@ -3341,9 +3341,9 @@
       "seasonPass": "Wow! Кубы дают вам сделку: Купите определённо справедливый Сезонный Пропуск и получите +2.25% больше Кубов и Тессерактов за уровень при Вознесении!",
       "challengeExtension": "Используя какой-нибудь удивительный трюк, вам удаётся увеличить свой лимит Испытаний Реинкарнации на 2 за каждый уровень!",
       "challengeTome": "Расширенное издание: Этот пятый забытый том даёт вам дополнительное снижение показателя требования Испытания 10 на 20 миллионов за каждый уровень. После 60 выполнений Испытания 9 и 10 это также уменьшит коэффициент увеличения требований на 1% за каждый уровень.",
-      "cubeToQuark": "Ваша прибыль Кварков от Кубов мелкая? Что ж, тогда купите это, чтобы увеличить прибыль Кварков от Вау! Кубов на +50%, навсегда!",
-      "tesseractToQuark": "Ваша прибыль Кварков от Тессерактов? Что ж, тогда купите это, чтобы увеличить прибыль Кварков от Вау! Тессерактов на +50%, навсегда!",
-      "hypercubeToQuark": "Ваша прибыль Кварков от Гиперкубов маловата? Что ж, тогда купите это, чтобы навсегда увеличить прибыль Кварков от Вау! Гиперкубов на +50%!",
+      "cubeToQuark": "Are your Quark gains from Cubes wimpy? Well, buy this for +50% Quarks from opening Wow! Cubes, forever! Additional levels grant up to +50% more, with exponential decay.",
+      "tesseractToQuark": "Are your Quark gains from Tesseracts wimpy? Well, buy this for +50% Quarks from opening Wow! Tesseracts, forever! Additional levels grant up to +50% more, with exponential decay.",
+      "hypercubeToQuark": "Are your Quark gains from Hypercubes wimpy? Well, buy this for +50% Quarks from opening Wow! Hypercubes, forever! Additional levels grant up to +50% more, with exponential decay.",
       "seasonPass2": "В пять раз выше цена, в два раза веселее! +1.5% Вау! Гиперкубов и Платоновых Кубов за каждый уровень.",
       "seasonPass3": "Ладно, теперь это просто нелепо. +1.5% Вау! Гептерактов и Октерактов за каждый уровень!",
       "chronometer": "Как по мне, эти Вознесения малость медленные. Почему бы мне не дать вам +1.2% к скорости таймера за уровень?",
@@ -3375,7 +3375,7 @@
       "improveQuarkHept": "That exponent on your Quark Hepteracts is nice, but what if it was better? Gain +0.01 power per level to the Quark Hept Exponent!",
       "improveQuarkHept2": "Want even stronger Quark Hepts? Gain +0.01 power per level to the Quark Hept Exponent!",
       "improveQuarkHept3": "You are probably asking why I would sell this to you instead of using it for myself. Well... here's +0.01 power per level!",
-      "improveQuarkHept4": "+0.01 power per level... You know that 10^0.01 is about 1.023, right?",
+      "improveQuarkHept4": "+0.01 к степени за уровень... А ты знал что 10^0.01 примерно равно 1.023?",
       "shopImprovedDaily": "Эй ты. Да, ты! Кварки делают тюленя-торговца счастливым. +5% кварков от кода \"daily\" за каждый уровень.",
       "shopImprovedDaily2": "Gain 1 additional free Golden Quark Upgrade and 20% more Golden Quarks per use of 'daily' per level!",
       "shopImprovedDaily3": "Gain 1 additional free Golden Quark Upgrade and 15% more Golden Quarks per use of 'daily' per level!",
@@ -3459,9 +3459,9 @@
       "seasonPass": "Ascensions give <<lightgoldenrodyellow|{{amount}}>> more Wow! Cubes and Tesseracts.",
       "challengeExtension": "Испытания Реинкарнации могут быть выполнены дополнительно <<lime|{{amount}}>> раз.",
       "challengeTome": "Challenge 10 Exponent Requirement reduced by <<lightgoldenrodyellow|{{amount1}}>>. Past 60 completions of C9 or C10 the scaling multiplier is [completions * <<lightgoldenrodyellow|{{amount2}}>>]",
-      "cubeToQuark": "Даже для премиум магазина это довольно очевидно, не так ли?",
-      "tesseractToQuark": "Даже для премиум магазина это довольно очевидно, не так ли?",
-      "hypercubeToQuark": "Даже для премиум магазина это довольно очевидно, не так ли?",
+      "cubeToQuark": "Wow! Cubes give <<cyan|+{{amount}}>> more Quarks!",
+      "tesseractToQuark": "Wow! Tesseracts give <<cyan|+{{amount}}>> more Quarks!",
+      "hypercubeToQuark": "Wow! Hypercubes give <<cyan|+{{amount}}>> more Quarks!",
       "seasonPass2": "Ascensions give <<lightgoldenrodyellow|{{amount}}>> more Hypercubes and Platonic Cubes.",
       "seasonPass3": "Ascensions give <<lightgoldenrodyellow|{{amount}}>> more Hepteracts and Octeracts.",
       "chronometer": "Ascension timer increases <<orange|{{amount}}>> faster.",
@@ -3549,23 +3549,23 @@
       "instantChallenge": "Instant Challenge Completions",
       "antSpeed": "Ant ELO Boost",
       "cashGrab": "Cash Grab",
-      "shopTalisman": "The Plastic talisman",
-      "seasonPass": "Season Pass",
+      "shopTalisman": "Талисман \"Пластик\"",
+      "seasonPass": "Сезонный Пропуск",
       "challengeExtension": "Reincarnation Challenge EX",
       "challengeTome": "Challenge 10 Requirement Reduce",
-      "cubeToQuark": "Cube Quarks +50%",
-      "tesseractToQuark": "Tesseract Quarks +50%",
-      "hypercubeToQuark": "Hypercube Quarks +50%",
-      "seasonPass2": "Season Pass 2",
-      "seasonPass3": "Season Pass 3",
+      "cubeToQuark": "Quark-Enriched Wow! Cubes",
+      "tesseractToQuark": "Quark-Enriched Wow! Tesseracts",
+      "hypercubeToQuark": "Quark-Enriched Wow! Hypercubes",
+      "seasonPass2": "Сезонный Пропуск 2",
+      "seasonPass3": "Сезонный Пропуск 3",
       "chronometer": "Chronometer 1",
       "infiniteAscent": "Infinite Ascent",
-      "calculator": "PL-AT calculator",
-      "calculator2": "PL-AT X calculator",
-      "calculator3": "PL-AT Ω calculator",
-      "calculator4": "PL-AT δ calculator",
+      "calculator": "Калькулятор PL-AT",
+      "calculator2": "Калькулятор PL-AT X",
+      "calculator3": "Калькулятор PL-AT Ω",
+      "calculator4": "Калькулятор PL-AT δ",
       "calculator5": "PL-AT Γ calculator",
-      "calculator6": "QUAAA-T calculator",
+      "calculator6": "Калькулятор КРЯЯЯ-T",
       "calculator7": "PL-AT ΩΩ calculator",
       "constantEX": "Constant EX",
       "powderEX": "Powder EX",
@@ -4137,7 +4137,7 @@
       },
       "singQuarkHepteract3": {
         "name": "Я бы хотел, чтобы мой Гептеракт Кварков был хоть немного лучше III.",
-        "description": "I AM NOT THE GODMOTHER YOU ARE LOOKING FOR! This wish, unlike the others, can be overclocked!",
+        "description": "Я НЕ ТА БОГИНЯ, КОТОРУЮ ТЫ ИЩЕШЬ! Это пожелание, в отличие от других, можно разогнать!",
         "effect": "Quark Hepteract Exponent +{{n}}"
       },
       "singOcteractGain": {
@@ -4218,7 +4218,7 @@
       },
       "halfMind": {
         "name": "ПОЛОВИННЫЙ РАЗУМ",
-        "description": "Заметка, которую вы нашли на 'земле': похоже на рекламу культа. \"Зафиксируйте свою глобальную скорость на 10х и умножьте все подношения и обтаниум на основе разницы\". Хм...",
+        "description": "A note, you found on the 'ground': seems like an advertisement for a cult. \"Lock your global speed to 1,000,000x, and multiply all obtainium and offerings based on the difference.\" Hmm...",
         "effectHave": "Вы присоединились к культу!",
         "effectHaveNot": "Вы не присоединились к культу!"
       },
@@ -4360,7 +4360,7 @@
     "elevator": {
       "title": "Лифт Сингулярности",
       "description": "<b><<gold | Используйте лифт чтобы приехать к нужной вам Сингулярности!>></b><br>Вы можете выбрать любую Сингулярность от Сингулярности 1 до <b>{{limit}}</b>",
-      "targetSingularity": "Target Singularity: {{target}}",
+      "targetSingularity": "Целевая сингулярность: {{target}}",
       "selectTarget": "Выберите нужную вам Сингулярность",
       "teleportButtonHigher": "Вверх!",
       "teleportButtonStay": "Reopen!",
@@ -4368,7 +4368,7 @@
       "lockToggle": "Заблокировать Будущие Сингулярности",
       "lockEnabled": "Будущие Сингулярности <<orange|ЗАБЛОКИРОВАНЫ>>. Вы повторите <<gold | Сингулярность {{target}}>>.",
       "lockDisabledIntro": "Будущие Сингулярности <<lime|РАЗБЛОКИРОВАНЫ>>.",
-      "lockDisabledSing": "Your next Singularity will be <<gold | Singularity {{target}}>>",
+      "lockDisabledSing": "Ваша следующая Сингулярность: <<gold | Сингулярность {{target}}>>",
       "invalidTarget": "Please select a valid Singularity between 1 and {{max}}.",
       "noTarget": "Пожалуйста, выберите нужную вам Сингулярность.",
       "confirmTeleport": "Вы уверены, что вы хотите перейти к Сингулярности {{target}}?",
@@ -5585,7 +5585,7 @@
       },
       "octeractTalismanLevelCap4": {
         "name": "Talisman Level Cap Increaser Talisman - MYTHIC Rarity",
-        "description": "I think you can guess what the <<crimson | ✎>> Signature of this Talisman would be...",
+        "description": "Думаю, ты угадаешь какая будет <<crimson | ✎>> Подпись у этого Талисмана...",
         "effect": "Talisman level cap is increased by {{n}}"
       }
     },
@@ -5621,7 +5621,7 @@
     },
     "duplication": {
       "name": "Умножение",
-      "description": "\"<i>Its ability lies in the world inside of the mirror...</i>\" -some bizarre inscription",
+      "description": "\"<i>Его возможность открывается только в зеркале...</i> - какое-то безумное начертание",
       "lockedDescription": "This rune is locked! To unlock it, Prestige 100 times. You even get an Achievement for it!",
       "multiplierPower": "<<pink | Multiplier Power Boosts +{{val}}>> (+0.2 per Power)",
       "freeMultipliers": "<<pink | Free Multipliers +{{val}}>> (+0.25% per Power)",
@@ -5674,8 +5674,8 @@
       "description": "The piece of eight, long thought lost, no longer. It went there and back again.",
       "lockedDescription": "Эта руна ещё не открыта! Чтобы её открыть, вам необходимо купить что-то, что вы должны оставить не купленным.",
       "singularityUnlock": "Something <span class=\"rainbowText\">singular</span> that's unlocked at Level 1: {{symbol}}",
-      "offeringBonus": "<<orange | Offering Gain x{{val}}>> (x10 per Power, diminishing)",
-      "obtainiumBonus": "<<pink | Obtainium Gain x{{val}}>> (x10 per Power, diminishing)",
+      "offeringBonus": "<<orange | Offering Gain x{{val}}>> (x10 per Power)",
+      "obtainiumBonus": "<<pink | Obtainium Gain x{{val}}>> (x10 per Power)",
       "addCode": "<<lightgray | 'Add' Code Refresh Interval {{val}}>> (-20% at 1 Power, up to -50%)",
       "cubeBonus": "<<white | Wow! Cube Gain +{{val}}>> (1.01x per level (max 5), times your current... Singularity?)",
       "values": "Level 1 unlocks something <span class=\"rainbowText\">special</span>! Each level gives 10x Offerings, 10x <<cyan | Immaculate>> Obtainium and makes code 'Add' regenerate faster.",
@@ -5761,13 +5761,13 @@
       "exemption": {
         "name": "The Exemption Talisman",
         "description": "Fake Science Monthly says wearing this trinket lowers your taxes!",
-        "inscription": "<<gold | ✏>> Inscription: Your taxes are multiplied by <<gold|{{val}}>>.",
+        "inscription": "<<gold | ✏>> Начертание: Ваши налоги умножаются на <<gold|{{val}}>>.",
         "signature": "<<crimson | ✎>> Signature: Add <<crimson|12>> to the Rune Level Coefficient of the Duplication Rune."
       },
       "chronos": {
         "name": "Talisman of Chronology",
         "description": "<i>Time flows just a little faster when worn</i>, you read on the tag.",
-        "inscription": "<<gold | ✏>> Inscription: Global Speed is increased by <<gold|{{val}}>>.",
+        "inscription": "<<gold | ✏>> Начертание: Общая Скорость увеличена на <<gold|{{val}}>>.",
         "signature": "<<crimson | ✎>> Signature: Add <<crimson|12>> to the Rune Level Coefficient of the Speed Rune."
       },
       "midas": {
@@ -5785,7 +5785,7 @@
       "polymath": {
         "name": "Trinket of the Polymath",
         "description": "Do you feel like an exiled trickster?",
-        "inscription": "<<gold | ✏>> Inscription: Ascension Speed is increased by <<gold|{{val}}>>.",
+        "inscription": "<<gold | ✏>> Начертание: Скорость Вознесения увеличена на <<gold|{{val}}>>.",
         "signature": "<<crimson | ✎>> Signature: Add <<crimson|12>> to the Rune level Coefficient of Superior Intellect Rune."
       },
       "mortuus": {
@@ -5809,14 +5809,14 @@
       "achievement": {
         "name": "Medal of Achievement",
         "description": "Has serial number <i>{{num}}</i> on it.",
-        "inscription": "<<gold | ✏>> Inscription: Sources of Positive Salvage give <<gold|{{val}}>> more!",
+        "inscription": "<<gold | ✏>> Начертание: Все положительные источники Добычи дают на <<gold|{{val}}>> больше!",
         "signature": "<<crimson | ✎>> Signature: Sources of Negative Salvage effect <<crimson|{{val}}>>."
       },
       "cookieGrandma": {
         "name": "Freshly-Baked Cookie",
         "description": "Kinda burns your neck. Thanks Grandma!",
-        "inscription": "<<gold | ✏>> Inscription: Gain <<gold|+{{val}}>> free Corruption Levels!",
-        "signature": "<<crimson | ✎>> Signature: Turns out, you cannot write on cookies."
+        "inscription": "<<gold | ✏>> Начертание: <<gold|+{{val}}>> к бесплатным Уровням Порчи!",
+        "signature": "<<crimson | ✎>> Подпись: Оказывается, на этих печеньях писать нельзя."
       },
       "horseShoe": {
         "name": "The Horse's Boot",
@@ -6069,9 +6069,9 @@
       },
       "limitedAscensions": {
         "name": "Limited Ascensions Challenge",
-        "description": "Derpsmith put an embargo on Ascensions. Clear the target Singularity, but don't Ascend too much!",
+        "description": "Кукузнец поставил эмбарго на Вознесения. Пройдите целевую Сингулярность, не совершая лишних Вознесений!",
         "effectMod1": "<<red|Ascension Limit: {{ascensions}}>>",
-        "effectMod2": "<<gold|⚠>> Each Ascension above {{ascensions}} divides Ascension Speed by 2.",
+        "effectMod2": "<<gold|⚠>> После {{ascensions}}-о Вознесения и выше, Скорость Вознесения сокращается в 2 раза.",
         "effectMod3": "Platonic DELTA is disabled, and Ascensions only grant 1 Ascension Count.",
         "ScalingReward1": "<<orange|+0.25% Ascension Speed>> per Digit in your <<orange|Ascension Count!>>",
         "ScalingReward2": "30 Achievement Points!",
@@ -6098,7 +6098,7 @@
       },
       "limitedTime": {
         "name": "Великий Спидран Сингулярности!",
-        "description": "<i>Time, time is something never meant to last.</i> Beat the target Singularity, but the fabric of your reality quickly collapses.",
+        "description": "<i>Время - это то, что не может существовать вечно.</i> Пройдите целевую Сингулярность, пока материя реальности вокруг вас быстро распадается.",
         "timeMod1": "<<red|⏱ Time Limit: {{time}} seconds>>",
         "timeMod2": "<<gold|⚠>> After the time limit, your Obtainium, Offering, and Cube production is divided by <<red|{{perSecondDivisor}}>> per second.",
         "timeMod3": "Derpsmith gives you a slight boost: <<#00DDFF | 5x faster Reborn ELO Creation Speed!>> Until you buy Antiquities, at least.",
@@ -6143,8 +6143,8 @@
       },
       "noQuarkUpgrades": {
         "name": "Disappearance of a Salesman",
-        "description": "Uh. Where did the Quark Shop Seal Merchant go? All you see is this guy with a mysterious <i>top hat</i>...",
-        "challengeDesc": "Beat the target Singularity, but Quark Shop upgrades do nothing! Unless they have the Utility Tag [⚙]. Then they work as normal.",
+        "description": "Ээ.. А куда подевался торговец Магазина Кварков? Единственное, что вы видите, этот какой-то незнакомец со своей таинственной <i>шляпой</i>...",
+        "challengeDesc": "Пройдите целевую сингулярность, но ваши улучшения из Магазина Кварков не работают. Если на них присутствует Жетон Полезности [⚙], тогда они будут работать.",
         "ScalingReward1": "<<orange|[☤]>> Quark Upgrades get +1 free level!",
         "ScalingReward2": "<<pink|[❍]>> Quark Upgrades get +1 free level!",
         "ScalingReward3": "<<magenta|[⬢]>> Quark Upgrades get +1 free level!",
@@ -6771,6 +6771,7 @@
       "Challenge15": "Награда Испытания 15:",
       "CubeUpgradeCx2": "Улучшение Кубов 6x2 (Cx2):",
       "SpacialDilation": "Corruption: Time Dilation:",
+      "AmbrosiaBrickOfLead": "Ambrosia - The Brick of Lead:",
       "FastSpeedDR": "Степень Верхнего Предела Глобальной Скорости (>100):",
       "SlowSpeedDR": "Степень Нижнего Предела Глобальной Скорости (<1):",
       "ImmaculateSpeedMult": "УП-Игнорирование Чистой Глобальной Скорости:",
@@ -6806,6 +6807,7 @@
       "ExponentialScalingFast": "Экспонента Скорости Вознесения (>1 Базовая):",
       "ExponentialScalingSlow": "Экспонента Скорости Вознесения (<1 Базовая):",
       "SingularityDebuff": "Штраф Сингулярности:",
+      "AmbrosiaBrickOfLead": "Ambrosia - The Brick of Lead:",
       "Total": "Множитель Базовой Скорости Вознесения:",
       "Total2": "Общий Множитель Скорости Вознесения:"
     },
@@ -7063,6 +7065,8 @@
     },
     "salvagePositive": {
       "title": "Positive Salvage",
+      "BaseMultiplier": "Base Positive Salvage Multiplier",
+      "AchievementTalisman": "Achievement Talisman - Salvage Bonus:",
       "AchievementBonus": "Salvage from Achievements:",
       "SynergismLevel": "Synergism Level Reward:",
       "SynergismLevelMilestone": "Level Milestone - Salvage Challenge Buff:",
@@ -7082,6 +7086,9 @@
     },
     "salvageNegative": {
       "title": "Negative Salvage",
+      "BaseMultiplier": "Base Negative Salvage Multiplier",
+      "SingularityPerk": "Singularity Perk - Recyclists Clicking at Your Desktop:",
+      "AchievementTalisman": "Achievement Talisman - Salvage Bonus:",
       "DroughtCorruption": "'Less Fruitful Harvests' Corruption",
       "SingularityDebuff": "Singularity Debuff:",
       "RedAmbrosiaYinYang": "Red Ambrosia - Yin:",
@@ -7541,10 +7548,13 @@
         "gave": "Я дал вам {{x}} Кварков дабы я мог забрать {{y}}."
       },
       "time": {
-        "wait": "Если вы импортировали сохранение, вы не можете использовать этот код в течение 15 минут чтобы предотвратить читеров.\n\nВ любом случае, вы обязаны подождать хотя бы 15 минут между каждым использованием.",
-        "confirm": "Нажмите на кнопку в течение следующих 15 секунд, чтобы испытать свою удачу! Если вы нажмёте в течение {{x}} мс после случайно сгенерированного времени, вы выиграете приз! Этот конкретный экземпляр имеет множитель {{y}}x из-за прошедшего времени между использованием.",
-        "won": "Вы кликнули в нужный момент! [+{{x}} Кварков]",
-        "lost": "Вы не угадали верное время, попробуйте снова позже!",
+        "wait": "You must wait at least 15 minutes between each use.",
+        "prepare": "Are you a bona fide time teller? Let's find out. If you can click the button between {{start}} and {{end}} seconds after pressing 'OK', You win {{quarks}} Quarks! Due to how long it has been since your last attempt, the rewards are multiplied by {{y}}.",
+        "confirm": "Press the button when you feel the time is right. Between {{start}} and {{end}} seconds, please!",
+        "maxedCookie": "Because Cx11 is maxed, you will always get the rewards from this code. Just have some fun!",
+        "cancelled": "No worries! Try again when you feel like it.",
+        "won": "You clicked 'OK' in {{time}} seconds! Congratulations! [+{{x}} Quarkies]",
+        "lost": "You clicked 'OK' in {{time}} seconds! Unfortunately, you did not win this time. Try again soon.",
         "ambrosia": "Между вашей голубикой происходит небольшой резонанс, дающий {{blueberryTime}} реальных секунд Очков Шкалы Амброзии."
       },
       "spoiler": {
@@ -7674,7 +7684,7 @@
       "failedToVerify": "Failed to validate with Steam. Is Steam open?"
     },
     "consumables": {
-      "connectionEstablished": "Connection was established!",
+      "connectionEstablished": "Соединение установлено!",
       "connectionFailed": "Could not re-establish your connection. Consumables and events related to Consumables will not work.",
       "ended": "{{consumable}} ended!",
       "redeemed": "A {{consumable}} has started!",
@@ -7739,7 +7749,7 @@
       "consumableSpoiler": "Начните событие для всех, использовав Колокольчик Счастливого Часа!",
       "consumableButton": "Магазин расходников",
       "applyTips": "Использовать Чаевые!",
-      "applyTipsPrompt": "Сколько чаевых вы бы хотели использовать? Каждые дают 1 минуту Оффлайн Времени. У вас {{tips}} чаевых. За раз можно использовать до 1 440 чаевых ",
+      "applyTipsPrompt": "How many tips would you like to use? Each tip gives 1 minute of Offline Time. You have {{tips}} tip(s). You may only use up to 1,440 tips at a time.",
       "confirmActivation": "You are about to activate a {{name}} for {{cost}} PseudoCoins. Continue?",
       "cancelled": "Покупка была отменена.",
       "currentAmountNone": "Current Amount: <<#8f8|No active consumable>>",
